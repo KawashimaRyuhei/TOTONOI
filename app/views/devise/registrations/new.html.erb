@@ -2,8 +2,14 @@
   <div class="inner">
     <div class="form__wrapper">
       <h2 class="page-heading">ユーザー新規登録</h2>
+      <%# ログイン時のエラーメッセージ  %>
+      <div class='login-flash-message'>
+        <%= flash[:notice] %>
+        <%= flash[:alert] %>
+      </div>        
+        <div >
         <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-          <%= render "devise/shared/error_messages", resource: resource %>
+          <%# <%= render "devise/shared/error_messages", resource: resource %>
 
           <div class="field">
             <%= f.label :ニックネーム %><br />
