@@ -1,2 +1,8 @@
-<h1>Stores#new</h1>
-<p>Find me in app/views/stores/new.html.erb</p>
+<div class="main">
+  <div class="inner">
+    <div class="form__wrapper">
+      <h2 class="page-heading">新規プロトタイプ投稿</h2>
+        <%= render partial: "form", locals: { prototype: @prototype } %>
+    </div>
+  </div>
+</div>
