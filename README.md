@@ -25,7 +25,7 @@
 | postal_code    | string     | null: false                    |
 | telephone      | string     | null: false                    |
 | url            | string     | null: false                    |
-| closing_day_id | integer    | null: false                    |
+| closing_day    | string     | null: false                    |
 | business_hour  | time       | null: false                    |
 | fee            | integer    | null: false                    |
 | water          | integer    | null: false                    |

@@ -21,7 +21,7 @@
           <% if user_signed_in? %>
             <div class="nav__right" >
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete,  class: :nav__logout %>
-            <%= link_to "サウナ登録", "#", class: :nav__btn %>
+            <%= link_to "サウナ登録", new_store_path, class: :nav__btn %>
             </div>
               <%# // ログインしているときは上記を表示するようにしましょう
                ログインしていないときは以下を表示するようにしましょう %>
