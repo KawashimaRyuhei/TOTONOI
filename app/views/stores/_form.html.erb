@@ -1,21 +1,86 @@
-<%= form_with model: prototype, local: true do |f|%>
+<%= form_with model: store, local: true do |f|%>
   <div class="field">
-    <%= f.label :title, "プロトタイプの名称" %><br />
-    <%= f.text_field :title, id:"prototype_title" %>
+    <%= f.label :name, "店舗名" %><br />
+    <%= f.text_field :name, class: :form__text, id:"prototype_title" %>
   </div>
 
   <div class="field">
-    <%= f.label :catch_copy, "キャッチコピー" %><br />
-    <%= f.text_area :catch_copy, class: :form__text, id:"prototype_catch_copy" %>
+    <%= f.label :postal_code, "郵便番号" %><br />
+    <%= f.text_field :postal_code, class: :form__text, id:"prototype_catch_copy" %>
   </div>
 
   <div class="field">
-    <%= f.label :concept, "コンセプト" %><br />
-    <%= f.text_area :concept, class: :form__text, id:"prototype_concept" %>
+    <%= f.label :address, "住所" %><br />
+    <%= f.text_field :address, class: :form__text, id:"prototype_concept" %>
   </div>
 
   <div class="field">
-    <%= f.label :image, "プロトタイプの画像" %><br />
+    <%= f.label :telephone, "電話番号" %><br />
+    <%= f.text_field :telephone, class: :form__text, id:"prototype_image" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :url, "公式HP" %><br />
+    <%= f.text_field :url, class: :form__text, id:"prototype_concept" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :closing_day, "店休日" %><br />
+    <%= f.text_field :closing_day, class: :form__text, id:"prototype_concept" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :business_hour, "営業時間" %><br />
+    <%= f.text_field :business_hour, class: :form__text, id:"prototype_concept" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :fee, "入浴料" %><br />
+    <%= f.text_field :fee, class: :form__text, id:"prototype_concept" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :roryu_status, "ロウリュ" %><br />
+    <%= f.text_field :roryu_status, class: :form__text, id:"prototype_concept" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :roryu_time, "ロウリュの時間" %><br />
+    <%= f.text_field :roryu_time, class: :form__text, id:"prototype_concept" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :temperature, "サウナ室内の温度" %><br />
+    <%= f.text_field :temperature, class: :form__text, id:"prototype_concept" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :television, "サウナ室内のテレビ設置" %><br />
+    <%= f.text_field :television, class: :form__text, id:"prototype_concept" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :water, "水風呂" %><br />
+    <%= f.text_field :water, class: :form__text, id:"prototype_concept" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :air_bath, "外気浴" %><br />
+    <%= f.text_field :air_bath, class: :form__text, id:"prototype_concept" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :break_place, "インターバル" %><br />
+    <%= f.text_field :break_place, class: :form__text, id:"prototype_concept" %>
+  </div>
+  
+  <div class="field">
+    <%= f.label :bgm, "サウナ内BGM" %><br />
+    <%= f.text_field :bgm, class: :form__text, id:"prototype_concept" %>
+  </div>
+
+  <div class="field">
+    <%= f.label :image, "店舗外観" %><br />
     <%= f.file_field :image, id:"prototype_image" %>
   </div>
 

@@ -18,21 +18,24 @@
 
 ## storesテーブル
 
-| Column         | Type       | Options                        |
-|--------------- |------------|--------------------------------|
-| name           | string     | null: false                    |
-| address        | string     | null: false                    |
-| postal_code    | string     | null: false                    |
-| telephone      | string     | null: false                    |
-| url            | string     | null: false                    |
-| closing_day_id | integer    | null: false                    |
-| business_hour  | time       | null: false                    |
-| fee            | integer    | null: false                    |
-| water          | integer    | null: false                    |
-| temperature    | integer    | null: false                    |
-| television     | string     | null: false                    |
-| bgm            | string     | null: false                    |
-| user           | references | null: false,foreign_key: true  |
+| Column          | Type       | Options                        |
+|-----------------|------------|--------------------------------|
+| name            | string     | null: false                    |
+| address         | string     | null: false                    |
+| postal_code     | string     | null: false                    |
+| telephone       | string     | null: false                    |
+| url             | string     | null: false                    |
+| closing_day     | string     | null: false                    |
+| business_hour   | string     | null: false                    |
+| fee             | integer    | null: false                    |
+| water           | integer    | null: false                    |
+| temperature     | integer    | null: false                    |
+| roryu_status    | integer    | null: false                    |
+| roryu_time      | integer    | null: false                    |
+| temperature     | integer    | null: false                    |
+| television      | string     | null: false                    |
+| bgm             | string     | null: false                    |
+| user            | references | null: false,foreign_key: true  |
 
 
 ### Association
