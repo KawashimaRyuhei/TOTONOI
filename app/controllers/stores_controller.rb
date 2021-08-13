@@ -18,7 +18,9 @@ class StoresController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
     @store = Store.find(params[:id])
+    @comments = @store.comments.includes(:user)
   end
 
   def edit

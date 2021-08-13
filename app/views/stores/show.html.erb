@@ -107,9 +107,31 @@
             <%= "大人（中学生以上）#{@store.fee.to_s(:delimited)}円" %>
           </p>
         </div>
-
       </div>
-      
+      <div class="prototype__comments">
+        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
+        <% if user_signed_in? %>
+          <%= form_with(model:[@store, @comment], local: true) do |f|%>
+            <div class="field">
+              <%= f.label :content, "コメント" %><br />
+              <%= f.text_field :content, id:"comment_text" %>
+            </div>
+            <div class="actions">
+              <%= f.submit "送信する", class: :form__btn %>
+            </div>
+          <% end %> 
+        <% end %>  
+        <%# // ログインしているユーザーには上記を表示する %>
+        <ul class="comments_lists">
+          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
+          <% @comments.each do |comments|  %>
+            <li class="comments_list">
+              <%= "#{comments.content}"%>
+              <%= link_to "#{comments.user.nickname}", "#" , class: :comment_user %>
+            </li>
+          <% end %>
+        </ul>
+      </div>
     </div>
   </div>
 </main>

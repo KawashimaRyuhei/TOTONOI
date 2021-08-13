@@ -17,4 +17,6 @@ class User < ApplicationRecord
   end  
   
   has_many :stores
+  has_many :comments
+  
 end
