@@ -3,8 +3,8 @@
   <div class="card__body">
     <%= link_to store.name, "#", class: :card__title%>
     <p class="card__summary">
-      <%= store.water %>
-      <%= store.temperature %>
+      <%= "水風呂:#{store.water}℃" %>
+      <%= "サウナ内温度:#{store.temperature}℃" %>
     </p>
     <%= link_to store.roryu_status, "#", class: :card__user %>
     <%= link_to store.roryu_time, "#", class: :card__user %>

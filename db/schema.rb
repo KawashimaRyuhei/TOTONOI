@@ -46,6 +46,8 @@ ActiveRecord::Schema.define(version: 2021_08_12_104706) do
     t.integer "temperature", null: false
     t.string "roryu_status", null: false
     t.string "roryu_time", null: false
+    t.string "air_bath", null: false
+    t.string "break_place", null: false
     t.string "television", null: false
     t.string "bgm", null: false
     t.bigint "user_id", null: false

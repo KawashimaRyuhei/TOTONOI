@@ -13,6 +13,8 @@ class CreateStores < ActiveRecord::Migration[6.0]
       t.integer :temperature, null: false
       t.string :roryu_status, null: false
       t.string :roryu_time, null: false
+      t.string :air_bath, null: false
+      t.string :break_place, null: false
       t.string  :television, null: false
       t.string :bgm, null: false
       t.references :user, null: false, foreign_key: true
