@@ -7,7 +7,7 @@ class CreateStores < ActiveRecord::Migration[6.0]
       t.string :telephone, null: false
       t.string :url, null: false
       t.string :closing_day, null: false
-      t.time    :business_hour, null: false
+      t.string    :business_hour, null: false
       t.integer  :fee, null: false
       t.integer  :water, null: false
       t.integer :temperature, null: false

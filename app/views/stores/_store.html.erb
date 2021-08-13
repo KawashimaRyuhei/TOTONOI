@@ -1,0 +1,11 @@
+<div class="card">
+  <%= link_to image_tag(store.image, class: :card__img), "#" %>
+  <div class="card__body">
+    <%= link_to store.name, "#", class: :card__title%>
+    <p class="card__summary">
+      <%= store.water %>
+      <%= store.temperature %>
+    </p>
+    <%= link_to store.telephone, "#", class: :card__user %>
+  </div>
+</div>

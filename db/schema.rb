@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 2021_08_12_104706) do
     t.string "telephone", null: false
     t.string "url", null: false
     t.string "closing_day", null: false
-    t.time "business_hour", null: false
+    t.string "business_hour", null: false
     t.integer "fee", null: false
     t.integer "water", null: false
     t.integer "temperature", null: false
