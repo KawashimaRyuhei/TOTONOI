@@ -2,58 +2,114 @@
   <div class="inner">
     <div class="prototype__wrapper">
       <p class="prototype__hedding">
-        <%= @prototype.title%>
+        <%= @store.name %>
       </p>
-      <%= link_to @prototype.user.name , user_path(@prototype.user_id), class: :prototype__user %>
+      <%= link_to @store.user.nickname , "#", class: :prototype__user %>
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
-      <% if user_signed_in? && current_user == @prototype.user  %>  
+      <% if user_signed_in? && current_user == @store.user  %>  
         <div class="prototype__manage">
-          <%= link_to "編集する", edit_prototype_path(@prototype), class: :prototype__btn %>
-          <%= link_to "削除する", prototype_path(@prototype), method: :delete, class: :prototype__btn %>
+          <%= link_to "編集する", "#", class: :prototype__btn %>
+          <%= link_to "削除する", "#", method: :delete, class: :prototype__btn %>
         </div>
       <% end %>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
       <div class="prototype__image">
-        <%= image_tag @prototype.image %>
+        <%= image_tag @store.image %>
       </div>
       <div class="prototype__body">
         <div class="prototype__detail">
-          <p class="detail__title">キャッチコピー</p>
+          <p class="detail__title">サウナ室内の温度</p>
           <p class="detail__message">
-            <%= @prototype.catch_copy %>
+            <%= @store.temperature %>
           </p>
         </div>
         <div class="prototype__detail">
-          <p class="detail__title">コンセプト</p>
+          <p class="detail__title">水風呂</p>
           <p class="detail__message">
-            <%= @prototype.concept %>
+            <%= @store.water %>
           </p>
         </div>
+        <div class="prototype__detail">
+          <p class="detail__title">ロウリュ</p>
+          <p class="detail__message">
+            <%= @store.roryu_status %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">ロウリュタイム</p>
+          <p class="detail__message">
+            <%= @store.roryu_time %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">休憩場所</p>
+          <p class="detail__message">
+            <%= @store.break_place %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">外気浴の場所</p>
+          <p class="detail__message">
+            <%= @store.air_bath %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">サウナ内BGM</p>
+          <p class="detail__message">
+            <%= @store.bgm %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">サウナ室内のテレビ設置</p>
+          <p class="detail__message">
+            <%= @store.television %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">郵便番号</p>
+          <p class="detail__message">
+            <%= "〒#{@store.postal_code}" %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">住所</p>
+          <p class="detail__message">
+            <%= @store.address %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">電話番号</p>
+          <p class="detail__message">
+            <%= @store.telephone %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">公式HP</p>
+          <p class="detail__message">
+            <%= @store.url %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">店休日</p>
+          <p class="detail__message">
+            <%= @store.closing_day %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">営業時間</p>
+          <p class="detail__message">
+            <%= @store.business_hour %>
+          </p>
+        </div>
+        <div class="prototype__detail">
+          <p class="detail__title">入浴料</p>
+          <p class="detail__message">
+            <%= "大人（中学生以上）#{@store.fee.to_s(:delimited)}円" %>
+          </p>
+        </div>
+
       </div>
-      <div class="prototype__comments">
-        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
-        <% if user_signed_in? %>
-          <%= form_with(model:[@prototype, @comment], local: true) do |f|%>
-            <div class="field">
-              <%= f.label :text, "コメント" %><br />
-              <%= f.text_field :text, id:"comment_text" %>
-            </div>
-            <div class="actions">
-              <%= f.submit "送信する", class: :form__btn %>
-            </div>
-          <% end %> 
-        <% end %>  
-        <%# // ログインしているユーザーには上記を表示する %>
-        <ul class="comments_lists">
-          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
-          <% @comments.each do |comments|  %>
-            <li class="comments_list">
-              <%= "#{comments.text}"%>
-              <%= link_to "#{comments.user.name}", user_path(comments.user_id), class: :comment_user %>
-            </li>
-          <% end %>
-        </ul>
-      </div>
+      
     </div>
   </div>
 </main>
