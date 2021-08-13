@@ -6,10 +6,10 @@
       </p>
       <%= link_to @store.user.nickname , "#", class: :prototype__user %>
       <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
-      <% if user_signed_in? && current_user == @store.user  %>  
+      <% if user_signed_in? && current_user == @store.user %>  
         <div class="prototype__manage">
           <%= link_to "編集する", edit_store_path(@store), class: :prototype__btn %>
-          <%= link_to "削除する", "#", method: :delete, class: :prototype__btn %>
+          <%= link_to "削除する", store_path(@store), method: :delete, class: :prototype__btn %>
         </div>
       <% end %>
       <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
