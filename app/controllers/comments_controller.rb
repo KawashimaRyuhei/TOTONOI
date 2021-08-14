@@ -1,7 +1,7 @@
 class CommentsController < ApplicationController
+  
   def create
     @store = Store.find(params[:store_id])
-    binding.pry
     @comment = Comment.new(comment_params)
     if @comment.save
       redirect_to store_path(@store)
@@ -10,8 +10,6 @@ class CommentsController < ApplicationController
       render "stores#show"
     end
   end
-
-
 
 
   private
