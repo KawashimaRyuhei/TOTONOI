@@ -1,6 +1,7 @@
 class Store < ApplicationRecord
   has_many :comments, dependent: :destroy
   belongs_to :user
+  has_many :good
   has_one_attached :image
   
   with_options presence: true do
