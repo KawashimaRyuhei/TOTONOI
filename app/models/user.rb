@@ -16,8 +16,9 @@ class User < ApplicationRecord
     end
   end  
   
-  has_many :stores
-  has_many :comments
-  has_many :good
+  has_many :stores, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :goods, dependent: :destroy
+  has_many :good_stores, through: :goods, source: :store
   
 end
