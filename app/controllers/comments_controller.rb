@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
       redirect_to store_path(@store)
     else
       @comments = @store.comments.includes(:user)
-      render "stores#show"
+      render "stores/show"
     end
   end
 
