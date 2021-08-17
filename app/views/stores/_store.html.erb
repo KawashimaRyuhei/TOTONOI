@@ -8,5 +8,8 @@
     </p>
     <%= link_to store.roryu_status, store_path(store), class: :card__user %>
     <%= link_to store.roryu_time, store_path(store), class: :card__user %>
+    <div id="goods_buttons_<%= store.id %>">
+      <%= render partial: 'goods/good', locals: { store: store } %>
+    </div>
   </div>
 </div>
