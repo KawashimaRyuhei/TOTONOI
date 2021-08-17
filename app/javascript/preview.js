@@ -3,6 +3,11 @@ document.addEventListener('DOMContentLoaded', function(){
     const ImageList = document.getElementById('image-list');
     
     document.getElementById('store_image').addEventListener('change', function(e){
+      const imageContent = document.querySelector('img');
+      if (imageContent){
+        imageContent.remove();
+      }
+
       const file = e.target.files[0];
       const blob = window.URL.createObjectURL(file);
 
