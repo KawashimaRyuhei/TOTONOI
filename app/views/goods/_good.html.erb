@@ -1,9 +1,17 @@
 <% if user_signed_in? %>
   <% if store.favorited_by?(current_user) %>
-    <p><span>ヨカッタ！解除: </span><%=link_to store.goods.count, good_path(store.id), method: :delete, remote: true %></p>
+    <div>ヨカッタ！<%=link_to good_path(store.id),class: "like-link", method: :delete, remote: true do%>
+      <i class="fas fa-heart unlike-btn"></i>
+    <% end %>
+    <%= store.goods.count %>
+    </div>
   <% else %>
-    <p><span>ヨカッタ！: </span><%=link_to store.goods.count, store_goods_path(store.id), method: :post, remote: true %></p>
+    <div>ヨカッタ！<%=link_to store_goods_path(store.id), class: "like-link",method: :post, remote: true do%>
+      <i class="far fa-heart like-btn"></i>    
+    <% end %>
+    <%= store.goods.count %>
+    </div>
   <% end %>
 <% else %>
-  <p><span>ヨカッタ！（ログインしてね）: </span><%= store.goods.count %></p>
+  <p><span>ヨカッタ！（ログインしてね♨️）: </span><%= store.goods.count %></p>
 <% end %>
