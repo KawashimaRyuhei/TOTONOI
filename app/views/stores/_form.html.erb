@@ -79,10 +79,12 @@
     <%= f.text_field :bgm, class: :form__text, id:"prototype_concept" %>
   </div>
 
-  <div class="field">
-    <%= f.label :image, "店舗外観" %><br />
-    <%= f.file_field :image, id:"prototype_image" %>
+  <div class="field" >
+    <%= f.label :image, "店舗画像" %><br />
+    <%= f.file_field :image, id:"store_image" %>
+    <div id="image-list"></div>
   </div>
+
 
   <div class="actions">
     <%= f.submit "保存する", class: :form__btn  %>
