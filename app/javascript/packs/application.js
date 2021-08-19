@@ -9,6 +9,7 @@ require("@rails/ujs").start()
 require("@rails/activestorage").start()
 require("channels")
 require('../preview')
+require('../header-fixed')
 require("jquery")
 
 // Uncomment to copy all static images under ../images to the output folder and reference
