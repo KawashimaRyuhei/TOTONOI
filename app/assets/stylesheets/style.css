@@ -163,16 +163,6 @@ a {
   margin-bottom: 8px;
   font-weight: bold;
 }
-.card__summary {
-  font-size: 16px;
-}
-.card__user {
-  display: block;
-  font-size: 12px;
-  color: #999;
-  text-align: right;
-  text-decoration: underline;
-}
 
 /* 詳細ページ */
 .store__wrapper{
@@ -193,6 +183,7 @@ a {
 .store__image{
   text-align: center;
   padding: 16px auto;
+  margin-bottom: 10px;
 }
 
 .store__detail{
@@ -233,8 +224,21 @@ a {
   margin: 28px 0 40px 0;
 }
 
-table {
-  width: 100%
+.table1 {
+  width: 100%;
+}
+
+.table2 {
+  width: 100%;
+}
+
+.table3 {
+  width: 100%;
+  margin-top: 10px;
+}
+
+.table4{
+  width: 100%;
 }
 
 table th{
@@ -243,6 +247,12 @@ table th{
 
 table td{
   background-color: white;
+}
+
+th, td{
+  padding: 5px 15px;
+  text-align: center;
+  white-space: nowrap;
 }
 
 
@@ -257,7 +267,7 @@ table td{
 
 .comment_user{
   font-size: 16px;
-  color: #999;
+  color: #87CEFA;
   text-decoration: underline;
 }
 

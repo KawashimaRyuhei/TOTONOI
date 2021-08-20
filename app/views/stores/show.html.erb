@@ -15,17 +15,13 @@
           <%= image_tag image, alt: '店舗画像' %>
         </div>
       <% end %>
-      <table border = "1">
+      <table class="table1">
         <thead>
           <th class="detail__title">温度</th>
           <th class="detail__title">水風呂</th>
           <th class="detail__title">水深</th>
           <th class="detail__title">ロウリュ</th>
           <th class="detail__title">ロウリュタイム</th>
-          <th class="detail__title">休憩場所</th>
-          <th class="detail__title">外気浴</th>
-          <th class="detail__title">BGM</th>
-          <th class="detail__title">テレビ設置</th>
         </thead>
         <tbody>
           <tr>
@@ -42,36 +38,43 @@
               <%= @store.roryu_status %>
             </td>
             <td class>
-                <%= @store.roryu_time %>
+              <%= @store.roryu_time %>
             </td>
-            <td class>
-                <%= @store.break_place %>
-            </td>
-            <td class>
-                <%= @store.air_bath %>
-            </td>
-            <td class>
-                <%= @store.bgm %>
-            </td>
-            <td class>
-              <%= @store.television %>
-            </td>  
-         
           </tr>
         </tbody>
       </table>
-      <table border = "1">
+      <table class="table2">
+        <thead>
+          <th class="detail__title">休憩場所</th>
+          <th class="detail__title">外気浴</th>
+          <th class="detail__title">BGM</th>
+          <th class="detail__title">テレビ設置</th>          
+        </thead>
+        <tbody>
+          <tr>
+            <td class>
+              <%= @store.break_place %>
+            </td>
+            <td class>
+              <%= @store.air_bath %>
+            </td>
+            <td class>
+              <%= @store.bgm %>
+            </td>
+            <td class>
+              <%= @store.television %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table3">
         <thead>  
           <th class="detail__title">郵便番号</th>
           <th class="detail__title">住所</th>
           <th class="detail__title">電話番号</th>
-          <th class="detail__title">公式HP</th>
-          <th class="detail__title">店休日</th>
-          <th class="detail__title">営業時間</th>
-          <th class="detail__title">入浴料</th> 
         </thead>
         <tbody>
-          <td class=>
+          <td class>
             <%= "〒#{@store.postal_code}" %>
           </td>
           <td class>
@@ -79,7 +82,17 @@
           </td>
           <td class>
             <%= @store.telephone %>
-          </td>                                    
+          </td>
+        </tbody>
+      </table>
+      <table class="table4">
+        <thead>  
+          <th class="detail__title">公式HP</th>
+          <th class="detail__title">店休日</th>
+          <th class="detail__title">営業時間</th>
+          <th class="detail__title">入浴料</th> 
+        </thead>
+        <tbody>                                   
           <td class>
             <%= @store.url %>
           </td>
