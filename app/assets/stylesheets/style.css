@@ -18,7 +18,7 @@ div {
 body {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
   color: #27363f;
-  background: url(background-image.jpg) center center / cover no-repeat;
+  background: url(background-image3.jpg) center center / cover no-repeat;
 }
 
 li {
@@ -191,10 +191,10 @@ a {
   text-decoration: underline;
 }
 .store__image{
-  width: 40%;
-  margin: 0 auto;
-  padding: 16px 0;
+  text-align: center;
+  padding: 16px auto;
 }
+
 .store__detail{
   display: flex;
   align-items: center;
@@ -232,6 +232,19 @@ a {
   padding: 20px;
   margin: 28px 0 40px 0;
 }
+
+table {
+  width: 100%
+}
+
+table th{
+  background-color: #87CEFA;
+}
+
+table td{
+  background-color: white;
+}
+
 
 .comments_lists{
   padding-left: 20px;

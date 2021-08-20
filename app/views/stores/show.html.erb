@@ -19,6 +19,7 @@
         <thead>
           <th class="detail__title">温度</th>
           <th class="detail__title">水風呂</th>
+          <th class="detail__title">水深</th>
           <th class="detail__title">ロウリュ</th>
           <th class="detail__title">ロウリュタイム</th>
           <th class="detail__title">休憩場所</th>
@@ -34,6 +35,9 @@
             <td class>
               <%= "#{@store.water}℃ "%>
             </td>
+            <td class>
+              <%= @store.water_depth %>
+            </td>             
             <td class>
               <%= @store.roryu_status %>
             </td>
@@ -51,7 +55,8 @@
             </td>
             <td class>
               <%= @store.television %>
-            </td>            
+            </td>  
+         
           </tr>
         </tbody>
       </table>
@@ -86,9 +91,6 @@
           </td>
           <td class>
             <%= "大人（中学生以上）#{@store.fee.to_s(:delimited)}円" %> 
-          </td>
-          <td>
-          <td class>
           </td>
         </tbody>
       </table>

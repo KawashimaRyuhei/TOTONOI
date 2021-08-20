@@ -11,6 +11,7 @@ class CreateStores < ActiveRecord::Migration[6.0]
       t.integer  :fee, null: false
       t.integer  :water, null: false
       t.integer :temperature, null: false
+      t.string :water_depth, null: false
       t.string :roryu_status, null: false
       t.string :roryu_time, null: false
       t.string :air_bath, null: false
