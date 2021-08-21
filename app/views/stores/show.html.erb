@@ -1,115 +1,113 @@
 <main class="main">
   <div class="inner">
-    <div class="prototype__wrapper">
-      <p class="prototype__hedding">
+    <div class="store__wrapper">
+      <p class="store__headding">
         <%= @store.name %>
       </p>
-      <%= link_to @store.user.nickname , "#", class: :prototype__user %>
-      <%# プロトタイプの投稿者とログインしているユーザーが同じであれば以下を表示する %>
-      <% if user_signed_in? && current_user == @store.user %>  
-        <div class="prototype__manage">
-          <%= link_to "編集する", edit_store_path(@store), class: :prototype__btn %>
-          <%= link_to "削除する", store_path(@store), method: :delete, class: :prototype__btn %>
+      <% if user_signed_in? && current_user.id == 1 %>  
+        <div class="store__manage">
+          <%= link_to "編集する", edit_store_path(@store), class: :store__btn %>
+          <%= link_to "削除する", store_path(@store), method: :delete, class: :store__btn %>
         </div>
       <% end %>
-      <%# // プロトタイプの投稿者とログインしているユーザーが同じであれば上記を表示する %>
-      <div class="prototype__image">
-        <%= image_tag @store.image %>
-      </div>
-      <div class="prototype__body">
-        <div class="prototype__detail">
-          <p class="detail__title">サウナ室内の温度</p>
-          <p class="detail__message">
-            <%= @store.temperature %>
-          </p>
+      <% @store.images.each do |image| %>
+        <div class="store__image">
+          <%= image_tag image, alt: '店舗画像' %>
         </div>
-        <div class="prototype__detail">
-          <p class="detail__title">水風呂</p>
-          <p class="detail__message">
-            <%= @store.water %>
-          </p>
-        </div>
-        <div class="prototype__detail">
-          <p class="detail__title">ロウリュ</p>
-          <p class="detail__message">
-            <%= @store.roryu_status %>
-          </p>
-        </div>
-        <div class="prototype__detail">
-          <p class="detail__title">ロウリュタイム</p>
-          <p class="detail__message">
-            <%= @store.roryu_time %>
-          </p>
-        </div>
-        <div class="prototype__detail">
-          <p class="detail__title">休憩場所</p>
-          <p class="detail__message">
-            <%= @store.break_place %>
-          </p>
-        </div>
-        <div class="prototype__detail">
-          <p class="detail__title">外気浴の場所</p>
-          <p class="detail__message">
-            <%= @store.air_bath %>
-          </p>
-        </div>
-        <div class="prototype__detail">
-          <p class="detail__title">サウナ内BGM</p>
-          <p class="detail__message">
-            <%= @store.bgm %>
-          </p>
-        </div>
-        <div class="prototype__detail">
-          <p class="detail__title">サウナ室内のテレビ設置</p>
-          <p class="detail__message">
-            <%= @store.television %>
-          </p>
-        </div>
-        <div class="prototype__detail">
-          <p class="detail__title">郵便番号</p>
-          <p class="detail__message">
+      <% end %>
+      <table class="table1">
+        <thead>
+          <th class="detail__title">温度</th>
+          <th class="detail__title">水風呂</th>
+          <th class="detail__title">水深</th>
+          <th class="detail__title">ロウリュ</th>
+          <th class="detail__title">ロウリュタイム</th>
+        </thead>
+        <tbody>
+          <tr>
+            <td class>
+              <%= "#{@store.temperature}℃" %>
+            </td>
+            <td class>
+              <%= "#{@store.water}℃ "%>
+            </td>
+            <td class>
+              <%= "#{@store.water_depth}cm" %>
+            </td>             
+            <td class>
+              <%= @store.roryu_status %>
+            </td>
+            <td class>
+              <%= @store.roryu_time %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table2">
+        <thead>
+          <th class="detail__title">休憩場所</th>
+          <th class="detail__title">外気浴</th>
+          <th class="detail__title">BGM</th>
+          <th class="detail__title">テレビ設置</th>          
+        </thead>
+        <tbody>
+          <tr>
+            <td class>
+              <%= @store.break_place %>
+            </td>
+            <td class>
+              <%= @store.air_bath %>
+            </td>
+            <td class>
+              <%= @store.bgm %>
+            </td>
+            <td class>
+              <%= @store.television %>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+      <table class="table3">
+        <thead>  
+          <th class="detail__title">郵便番号</th>
+          <th class="detail__title">住所</th>
+          <th class="detail__title">電話番号</th>
+        </thead>
+        <tbody>
+          <td class>
             <%= "〒#{@store.postal_code}" %>
-          </p>
-        </div>
-        <div class="prototype__detail">
-          <p class="detail__title">住所</p>
-          <p class="detail__message">
+          </td>
+          <td class>
             <%= @store.address %>
-          </p>
-        </div>
-        <div class="prototype__detail">
-          <p class="detail__title">電話番号</p>
-          <p class="detail__message">
+          </td>
+          <td class>
             <%= @store.telephone %>
-          </p>
-        </div>
-        <div class="prototype__detail">
-          <p class="detail__title">公式HP</p>
-          <p class="detail__message">
+          </td>
+        </tbody>
+      </table>
+      <table class="table4">
+        <thead>  
+          <th class="detail__title">公式HP</th>
+          <th class="detail__title">店休日</th>
+          <th class="detail__title">営業時間</th>
+          <th class="detail__title">入浴料</th> 
+        </thead>
+        <tbody>                                   
+          <td class>
             <%= @store.url %>
-          </p>
-        </div>
-        <div class="prototype__detail">
-          <p class="detail__title">店休日</p>
-          <p class="detail__message">
+          </td>
+          <td class>
             <%= @store.closing_day %>
-          </p>
-        </div>
-        <div class="prototype__detail">
-          <p class="detail__title">営業時間</p>
-          <p class="detail__message">
+          </td>
+          <td class>
             <%= @store.business_hour %>
-          </p>
-        </div>
-        <div class="prototype__detail">
-          <p class="detail__title">入浴料</p>
-          <p class="detail__message">
-            <%= "大人（中学生以上）#{@store.fee.to_s(:delimited)}円" %>
-          </p>
-        </div>
-      </div>
-      <div class="prototype__comments">
-        <%# ログインしているユーザーには以下のコメント投稿フォームを表示する %>
+          </td>
+          <td class>
+            <%= "#{@store.fee.to_s(:delimited)}円" %> 
+          </td>
+        </tbody>
+      </table>
+      <div class="store__comments">
         <% if user_signed_in? %>
           <%= form_with(model:[@store, @comment], local: true) do |f|%>
             <div class="field">
@@ -121,9 +119,7 @@
             </div>
           <% end %> 
         <% end %>  
-        <%# // ログインしているユーザーには上記を表示する %>
         <ul class="comments_lists">
-          <%# 投稿に紐づくコメントを一覧する処理を記述する %>
           <% @comments.each do |comments|  %>
             <li class="comments_list">
               <%= "#{comments.content}"%>

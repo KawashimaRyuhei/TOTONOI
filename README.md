@@ -30,9 +30,9 @@
 | fee             | integer    | null: false                    |
 | water           | integer    | null: false                    |
 | temperature     | integer    | null: false                    |
-| roryu_status    | integer    | null: false                    |
-| roryu_time      | integer    | null: false                    |
-| temperature     | integer    | null: false                    |
+| roryu_status    | string     | null: false                    |
+| roryu_time      | string     | null: false                    |
+| water_depth     | string     | null: false                    |
 | television      | string     | null: false                    |
 | bgm             | string     | null: false                    |
 | user            | references | null: false,foreign_key: true  |

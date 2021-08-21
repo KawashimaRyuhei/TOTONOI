@@ -1,13 +1,31 @@
 <div class="card">
-  <%= link_to image_tag(store.image, class: :card__img), store_path(store) %>
+  <% store.images.each do |image|  %>
+  <div class="messages">
+      <%= link_to image_tag( image, class: :card__img), store_path(store) %> 
+  </div>
+  <% end %>
   <div class="card__body">
     <%= link_to store.name, store_path(store), class: :card__title%>
-    <p class="card__summary">
-      <%= "水風呂:#{store.water}℃" %>
-      <%= "サウナ内温度:#{store.temperature}℃" %>
-    </p>
-    <%= link_to store.roryu_status, store_path(store), class: :card__user %>
-    <%= link_to store.roryu_time, store_path(store), class: :card__user %>
+    <table class="table1">
+      <tr>
+        <th>水風呂</th>
+        <th>サウナ内温度</th>
+      </tr>
+      <tr>
+        <td><%= "#{store.water}℃" %></td>
+        <td><%= "#{store.temperature}℃" %></td>
+      </tr>
+    </table>
+    <table class="table2">
+      <tr>
+        <th>ロウリュ</th>
+        <th>ロウリュタイム</th>
+      </tr>
+      <tr>
+        <td><%= "#{store.roryu_status}" %></td>
+        <td><%= "#{store.roryu_time}"%></td>
+      </tr>
+    </table>
     <div id="goods_buttons_<%= store.id %>">
       <%= render partial: 'goods/good', locals: { store: store } %>
     </div>
