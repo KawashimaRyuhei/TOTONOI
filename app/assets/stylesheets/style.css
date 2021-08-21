@@ -56,6 +56,15 @@ a {
 .logo {
   width: 200px;
 }
+.search{
+  margin: auto;
+  min-width: 300px;
+  justify-content: space-between;
+}
+.search__btn{
+  padding-top: 6px;
+
+}
 
 .nav__right{
   margin-top: 20px;

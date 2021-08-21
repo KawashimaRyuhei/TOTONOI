@@ -19,6 +19,15 @@
           <div class="nav__left">
             <%= link_to image_tag("logo.png", class: :logo), root_path %>
           </div>
+          <div class="search">
+          <%= search_form_for @s, url: search_stores_path do |f|%>
+            <% f.label :name_cont%>
+            <%= f.search_field :name_cont %>
+            <%= button_tag type: :submit, class: :search__btn do %>
+              <i class="fas fa-search"></i>
+            <% end %>
+          <% end %>
+          </div>          
           <% if user_signed_in? && current_user.id == 1 %>
             <div class="nav__right" >
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete,  class: :nav__logout %>

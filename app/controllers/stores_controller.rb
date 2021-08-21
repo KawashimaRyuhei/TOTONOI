@@ -1,7 +1,8 @@
 class StoresController < ApplicationController
-  before_action :search_store, only: [:index, :search]
+  before_action :search_store
   
   def index
+    @results = @s.result(distinct: true) 
     @store = Store.includes(:user)
   end
 
@@ -54,7 +55,4 @@ class StoresController < ApplicationController
                                   :roryu_status, :roryu_time, :air_bath, :break_place, :television, :bgm, :water_depth, images: [] ).merge(user_id: current_user.id)
   end
 
-  def search_store
-    @s = Store.ransack(params[:q])
-  end
 end

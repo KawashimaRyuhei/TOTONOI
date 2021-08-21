@@ -7,13 +7,6 @@
       <%= link_to "#{current_user.nickname}さん", "#", class: :greeting__link%>
     </div>
     <% end %>
-    <h1>店舗検索</h1>
-    <%= search_form_for @s, url: search_stores_path do |f|%>
-      <% f.label :name_cont, '店舗名'%>
-      <%= f.search_field :name_cont %>
-      <br>
-      <%= f.submit '検索' %>
-    <% end %>
     <div class="card__wrapper">
       <%= render partial: "store", collection: @store %>
     </div>
