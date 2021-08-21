@@ -4,7 +4,7 @@
       <p class="store__headding">
         <%= @store.name %>
       </p>
-      <% if user_signed_in? && current_user == @store.user %>  
+      <% if user_signed_in? && current_user.id == 1 %>  
         <div class="store__manage">
           <%= link_to "編集する", edit_store_path(@store), class: :store__btn %>
           <%= link_to "削除する", store_path(@store), method: :delete, class: :store__btn %>
@@ -32,7 +32,7 @@
               <%= "#{@store.water}℃ "%>
             </td>
             <td class>
-              <%= @store.water_depth %>
+              <%= "#{@store.water_depth}cm" %>
             </td>             
             <td class>
               <%= @store.roryu_status %>
@@ -103,7 +103,7 @@
             <%= @store.business_hour %>
           </td>
           <td class>
-            <%= "大人（中学生以上）#{@store.fee.to_s(:delimited)}円" %> 
+            <%= "#{@store.fee.to_s(:delimited)}円" %> 
           </td>
         </tbody>
       </table>

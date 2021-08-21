@@ -18,7 +18,7 @@ div {
 body {
   font-family: "Noto Sans JP", "Hiragino Kaku Gothic ProN W3", sans-serif;
   color: #27363f;
-  background: url(background-image3.jpg) center center / cover no-repeat;
+  background: url(background-image3.jpg) center center / cover no-repeat fixed;
 }
 
 li {
@@ -40,18 +40,12 @@ a {
 .header {
   background-color: #87CEFA;
   margin-bottom: 48px;
-  padding: 20px 0;
-}
-
-.header.fixed{
-	position: fixed;/*fixedを設定して固定*/
-  z-index: 999;/*最前面へ*/
-  top:0;/*位置指定*/
-  left:0;/*位置指定*/
+  width: 100%;
+  position: fixed;
 }
 
 .inner {
-  width: 1024px;
+  width: 1100px;
   margin: 0 auto;
 }
 .nav {
@@ -133,6 +127,9 @@ a {
 
 /* メイン */
 
+.main{
+  padding-top: 100px;
+}
 .greeting{
   margin-bottom: 20px;
 }

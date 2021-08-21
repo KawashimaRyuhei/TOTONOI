@@ -19,27 +19,26 @@
           <div class="nav__left">
             <%= link_to image_tag("logo.png", class: :logo), root_path %>
           </div>
-          <%# ログインしているときは以下を表示するようにしましょう %>
-          <% if user_signed_in? %>
+          <% if user_signed_in? && current_user.id == 1 %>
             <div class="nav__right" >
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete,  class: :nav__logout %>
             <%= link_to "サウナ登録", new_store_path, class: :nav__btn %>
             </div>
-              <%# // ログインしているときは上記を表示するようにしましょう
-               ログインしていないときは以下を表示するようにしましょう %>
+          <% elsif user_signed_in? && current_user.id != 1%>
+            <div class="nav__right" >
+            <%= link_to "ログアウト", destroy_user_session_path, method: :delete,  class: :nav__logout %>
+            <%= link_to "アカウント", "#", class: :nav__btn %>
+            </div>
           <% else %>
             <div class="nav__right">
             <%= link_to "ログイン", new_user_session_path, class: :nav__btn %>
             <%= link_to "新規登録", new_user_registration_path, class: :nav__btn %>
             </div>
           <% end %>
-          <%# // ログインしていないときは上記を表示するようにしましょう %>
         </div>
       </div>
     </header>
     <%= yield %>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="js/header-fixed.js"></script>
     <footer class="footer">
       <p class="copyright">Copyright © SENTO All rights reserved.</p>
     </footer>
