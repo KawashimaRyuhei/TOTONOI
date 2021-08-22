@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
-  if (document.getElementById('store_image')){
+  if (document.getElementById('message_image')){
     const ImageList = document.getElementById('image-list')
     
     const createImageHTML = (blob) => {
@@ -11,8 +11,8 @@ document.addEventListener('DOMContentLoaded', function() {
       blobImage.setAttribute('src', blob)
 
       const inputHTML = document.createElement('input')
-      inputHTML.setAttribute('id', `store_image_${imageElementNum}`)
-      inputHTML.setAttribute('name', 'store[images][]')
+      inputHTML.setAttribute('id', `message_image_${imageElementNum}`)
+      inputHTML.setAttribute('name', 'message[images][]')
       inputHTML.setAttribute('type', 'file')
 
       imageElement.appendChild(blobImage)
@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function() {
       })
     }
 
-    document.getElementById('store_image').addEventListener('change', (e) => {
+    document.getElementById('message_image').addEventListener('change', (e) => {
       let file = e.target.files[0];
       let blob = window.URL.createObjectURL(file);
 
