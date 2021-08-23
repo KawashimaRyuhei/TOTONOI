@@ -46,7 +46,6 @@ class StoresController < ApplicationController
 
   def search
     @results = @s.result
-    binding.pry
   end
 
   private

@@ -27,8 +27,8 @@
           <td><%= "#{result.roryu_time}"%></td>
         </tr>
       </table>
-      <div id="goods_buttons_<%= store.id %>">
-        <%= render partial: 'goods/good', locals: { store: store } %>
+      <div id="goods_buttons_<%= result.id %>">
+        <%= render partial: 'goods/good', locals: { store: result } %>
       </div>
     </div>
   </div>
