@@ -1,8 +1,7 @@
 class StoresController < ApplicationController
   before_action :search_store
   
-  def index
-    @results = @s.result(distinct: true) 
+  def index 
     @store = Store.includes(:user)
   end
 
@@ -46,7 +45,8 @@ class StoresController < ApplicationController
   end
 
   def search
-    @results = @s.result.includes(:store)
+    @results = @s.result
+    binding.pry
   end
 
   private
