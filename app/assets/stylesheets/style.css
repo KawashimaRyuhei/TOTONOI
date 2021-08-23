@@ -62,9 +62,14 @@ a {
   min-width: 300px;
   justify-content: space-between;
 }
-.search__btn{
-  padding-top: 6px;
 
+.search_field{
+  border: solid 1px black;
+}
+
+.search__btn{
+  background-color: #87CEFA;
+  border: solid 1px #87CEFA;
 }
 
 .nav__right{
@@ -281,6 +286,22 @@ th, td{
   color: #87CEFA;
   text-decoration: underline;
 }
+
+/* ページネーション */
+.pagination{
+  display: flex;
+  justify-content: center;
+}
+
+.pagination>li>a{
+  border: none;
+
+}
+
+.page-item {
+  background: #87CEFA;
+}
+
 
 /* ユーザーページ */
 .user__wrapper{
