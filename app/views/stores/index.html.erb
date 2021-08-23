@@ -13,12 +13,12 @@
         <%= f.search_field :name_or_address_cont %>
         <%= f.submit '検索'%>
         <%# <%= button_tag type: 'submit', class: 'search__btn' do %>
-          <%# <i class="fas fa-search"></i> %> %>
-        <%# <% end %> %>
+          <%# <i class="fas fa-search"></i> %>
+        <%# <% end %>
       <% end %>
     </div>
     <div class="card__wrapper">
       <%= render partial: "store", collection: @store %>
-    </div>
+    </div> 
   </div>
 </main>
