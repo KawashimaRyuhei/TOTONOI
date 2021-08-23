@@ -2,7 +2,7 @@ class StoresController < ApplicationController
   before_action :search_store
   
   def index 
-    @store = Store.includes(:user)
+    @store = Store.includes(:user).page(params[:page]).per(6)
   end
 
   def new
@@ -45,7 +45,7 @@ class StoresController < ApplicationController
   end
 
   def search
-    @results = @s.result
+    @results = @s.result.page(params[:page]).per(6)
   end
 
   private
