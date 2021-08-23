@@ -18,6 +18,7 @@
     </div>
     <div class="card__wrapper">
       <%= render partial: "store", collection: @store %>
-    </div> 
+    </div>
+    <%= paginate @store %>
   </div>
 </main>
