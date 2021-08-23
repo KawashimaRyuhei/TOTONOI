@@ -1,14 +1,24 @@
 
 <main class="main">
   <div class="inner">
-      <% if user_signed_in? %>
-      <div class="greeting">
-        こんにちは、
-        <%= link_to "#{current_user.nickname}さん", "#", class: :greeting__link%>
-      </div>
-      <% end %>    
+    <% if user_signed_in? %>
+    <div class="greeting">
+      こんにちは、
+      <%= link_to "#{current_user.nickname}さん", "#", class: :greeting__link%>
+    </div>
+    <% end %>
+    <div class="search">
+      <%= search_form_for @s, url: search_stores_path do |f|%>
+        <% f.label :name_or_address_cont%>
+        <%= f.search_field :name_or_address_cont %>
+        <%= f.submit '検索'%>
+        <%# <%= button_tag type: 'submit', class: 'search__btn' do %>
+          <%# <i class="fas fa-search"></i> %>
+        <%# <% end %>
+      <% end %>
+    </div>
     <div class="card__wrapper">
       <%= render partial: "store", collection: @store %>
-    </div>
+    </div> 
   </div>
 </main>

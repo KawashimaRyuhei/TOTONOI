@@ -1,9 +1,5 @@
 <div class="card">
-  <% store.images.each do |image|  %>
-  <div class="messages">
-      <%= link_to image_tag( image, class: :card__img), store_path(store) %> 
-  </div>
-  <% end %>
+  <%= link_to image_tag( store.images[0], class: :card__img, size: '300x300'), store_path(store) %>
   <div class="card__body">
     <%= link_to store.name, store_path(store), class: :card__title%>
     <table class="table1">

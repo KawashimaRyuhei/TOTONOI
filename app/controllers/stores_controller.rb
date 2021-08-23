@@ -1,5 +1,7 @@
 class StoresController < ApplicationController
-  def index
+  before_action :search_store
+  
+  def index 
     @store = Store.includes(:user)
   end
 
@@ -42,9 +44,14 @@ class StoresController < ApplicationController
     redirect_to root_path
   end
 
+  def search
+    @results = @s.result
+  end
+
   private
   def post_params
     params.require(:store).permit(:name, :address, :postal_code, :telephone, :url, :closing_day, :business_hour, :fee, :water, :temperature, 
                                   :roryu_status, :roryu_time, :air_bath, :break_place, :television, :bgm, :water_depth, images: [] ).merge(user_id: current_user.id)
   end
+
 end
