@@ -72,3 +72,5 @@ gem 'ransack'
 
 
 gem 'kaminari'
+
+gem 'dotenv-rails'
