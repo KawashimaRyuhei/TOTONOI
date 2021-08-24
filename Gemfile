@@ -73,4 +73,4 @@ gem 'ransack'
 
 gem 'kaminari'
 
-gem 'dotenv-rails', groups: [:development, :test]
+gem 'dotenv-rails'
