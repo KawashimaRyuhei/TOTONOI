@@ -28,7 +28,7 @@
           <div class="nav__left">
             <%= link_to image_tag("logo.png", class: :logo), root_path %>
           </div>
-          <% if user_signed_in? && current_user.id == 1 %>
+          <% if user_signed_in? && current_user.nickname == "管理人" %>
             <div class="nav__right" >
             <%= link_to "ログアウト", destroy_user_session_path, method: :delete,  class: :nav__logout %>
             <%= link_to "サウナ登録", new_store_path, class: :nav__btn %>
