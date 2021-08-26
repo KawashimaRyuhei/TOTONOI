@@ -23,7 +23,7 @@ https://sento-88.herokuapp.com/
 
 ## DEMO
 ### トップページ
-![トップページ](https://user-images.githubusercontent.com/58518385/130932485-186caa05-c8f2-4661-8255-b0e287d9a358.jpeg
+![トップページ](https://user-images.githubusercontent.com/58518385/130953702-b462c68a-3579-4c7a-86e1-a493d5e2cb5d.jpeg)
 
 （ログインユーザー）
 
