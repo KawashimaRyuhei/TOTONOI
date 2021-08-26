@@ -23,7 +23,7 @@ https://sento-88.herokuapp.com/
 
 ## DEMO
 ### トップページ
-https://gyazo.com/5a96ccc88f89d328fdbabb632c2ddf44
+![Uploading トップページ.jpeg…]()
 （未ログインユーザー）
 https://gyazo.com/36d591ac570321040078a3373b7c28e1
 （ログインユーザー）
