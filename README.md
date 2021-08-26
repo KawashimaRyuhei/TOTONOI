@@ -29,6 +29,7 @@ https://sento-88.herokuapp.com/
 ![demo](https://gyazo.com/a0108259ad060e489b29cfe0a2a17b6d/raw)
 （未ログインユーザー）
 ![demo](https://gyazo.com/04593a447f541e08663ecc73d3b1a9a3/raw)
+
 （ログインユーザー）
 
 ### ユーザー新規登録ページ
