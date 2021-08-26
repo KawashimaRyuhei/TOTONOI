@@ -26,21 +26,21 @@ https://sento-88.herokuapp.com/
 ![トップページ](https://user-images.githubusercontent.com/58518385/130932485-186caa05-c8f2-4661-8255-b0e287d9a358.jpeg)
 
 ### 店舗詳細ページ
-![demo](https://gyazo.com/a0108259ad060e489b29cfe0a2a17b6d/raw)
+![demo](https://gyazo.com/a0108259ad060e489b29cfe0a2a17b6d.gif)
 （未ログインユーザー）
-![demo](https://gyazo.com/04593a447f541e08663ecc73d3b1a9a3/raw)
+![demo](https://gyazo.com/04593a447f541e08663ecc73d3b1a9a3.gif)
 
 （ログインユーザー）
 
 ### ユーザー新規登録ページ
-![demo](https://gyazo.com/2ba8dd9ff4dfd2ed2209597d4e234c3d/raw)
+![demo](https://gyazo.com/2ba8dd9ff4dfd2ed2209597d4e234c3d.gif)
 
 ### ログインページ
-![demo](https://gyazo.com/dc0a7c7ad7cbd0d3f2368e5d274f6a9d/raw)
+![demo](https://gyazo.com/dc0a7c7ad7cbd0d3f2368e5d274f6a9d.gif)
 
 ### 店舗登録ページ
 ![店舗詳細]("https://user-images.githubusercontent.com/58518385/130956095-ae79bbe1-5ff8-4411-95b6-b6cddf19d11a.png)
-![demo](https://gyazo.com/f7c28f678257fa0e4e0c5c7b6546c8cc/raw)
+![demo](https://gyazo.com/f7c28f678257fa0e4e0c5c7b6546c8cc.gif)
 
 ## 工夫したポイント
 必要な情報を得ながらも、シンプルな見た目になるよう意識しました。
