@@ -83,9 +83,9 @@ a {
   text-decoration: none;
   user-select: none;
   border: 1px white solid;
-  border-radius: 3px;
   transition: 0.4s ease;
 }
+
 .nav__btn:hover{
   opacity: 0.5;
 }
@@ -102,7 +102,16 @@ a {
 .nav__logout:hover{
   opacity: 0.5;
 }
-
+.nav__top{
+  display: inline-block;
+  padding: 0.4em 1.6em;
+  font-size: 0.8em;
+  color: #87CEFA;
+  text-decoration: none;
+  user-select: none;
+  border: 2px #87CEFA solid;
+  transition: 0.4s ease;
+}
 /* フォーム周り */
 .form__wrapper{
   min-height: calc(100vh - 161px);

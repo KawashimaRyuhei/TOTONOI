@@ -1,10 +1,12 @@
 <main class="main">
   <div class="inner">
+    <div class="top_page">
+      <%= link_to "ホーム", root_path, class: :nav__top %>
+    </div>
     <div class="store__wrapper">
       <p class="store__headding">
         <%= @store.name %>
       </p>
-
       <% if user_signed_in? && current_user.id == 1 %>  
         <div class="store__manage">
           <%= link_to "編集する", edit_store_path(@store), class: :store__btn %>
