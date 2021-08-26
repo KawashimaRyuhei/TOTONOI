@@ -43,7 +43,7 @@ https://sento-88.herokuapp.com/
 登録済みのユーザーがメールアドレスとパスワードを使ってログインができます。
 
 ### 店舗登録ページ
-![demo](https://gyazo.com/f7c28f678257fa0e4e0c5c7b6546c8cc.gif)
+![demo](https://gyazo.com/d0d67f02a92be84cb1151a2bd7dc36ba.gif)
   
 管理者が店舗情報を登録できます。複数画像が添付出来、添付した画像はプレビューで確認することができます。
 
