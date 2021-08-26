@@ -23,17 +23,12 @@ https://sento-88.herokuapp.com/
 
 ## DEMO
 ### トップページ
-![トップページ](https://user-images.githubusercontent.com/58518385/130932485-186caa05-c8f2-4661-8255-b0e287d9a358.jpeg)
-（未ログインユーザー）
-https://gyazo.com/36d591ac570321040078a3373b7c28e1
+![トップページ](https://user-images.githubusercontent.com/58518385/130932485-186caa05-c8f2-4661-8255-b0e287d9a358.jpeg
+
 （ログインユーザー）
 
-ユーザーが登録ページから
-
 ### 店舗詳細ページ
-https://gyazo.com/a0108259ad060e489b29cfe0a2a17b6d
-（未ログインユーザー）
-https://gyazo.com/04593a447f541e08663ecc73d3b1a9a3
+https://user-images.githubusercontent.com/58518385/130953574-3d966010-e9ef-4639-988a-9ce71020449b.mp4
 （ログインユーザー）
 
 ### ユーザー新規登録ページ
