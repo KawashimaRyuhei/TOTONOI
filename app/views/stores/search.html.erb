@@ -1,5 +1,8 @@
 <main class="main">
   <div class="inner">
+    <div class="top_page">
+      <%= link_to "ホーム", root_path, class: :nav__top %>
+    </div>
     <% if user_signed_in? %>
     <div class="greeting">
       こんにちは、
@@ -18,7 +21,7 @@
     <div class="card__wrapper">
       <% @results.each do |result| %>
         <div class="card">
-          <%= link_to image_tag( result.images[0], class: :card__img, size: '300x300'), store_path(result) %>
+          <%= link_to image_tag( result.images[0], class: :card__img, size: '3830x383'), store_path(result) %>
           <div class="card__body">
             <%= link_to result.name, store_path(result), class: :card__title%>
             <table class="table1">
