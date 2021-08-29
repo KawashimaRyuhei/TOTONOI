@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  get 'inquery/index'
+  get 'inquery/confirm'
+  get 'inquery/thanks'
   devise_for :users
   root to: "stores#index"
   resources :stores do
