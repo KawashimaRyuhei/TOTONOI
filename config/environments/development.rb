@@ -34,12 +34,12 @@ Rails.application.configure do
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = true
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.amtp_settings = {
+  config.action_mailer.smtp_settings = {
     address: 'smtp.gmail.com',
     port: 587,
     domain: 'gmail.com',
-    user_name: '<gmailのメールアドレス>',
-    password: '<gmailのメールアドレス>',
+    user_name: ENV['SEND_MAIL'],
+    password: ENV['SEND_MAIL_PASS'],
     authentication: 'plain',
     enable_atarttls_auto: true
   }

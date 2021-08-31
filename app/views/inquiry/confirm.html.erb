@@ -1,8 +1,8 @@
-<div class="page-deader">
+<div class="main">
   <h1>お問い合わせ</h1>
 </div>
 
-<%= form_for @inquiry, :url => "#_path" do |f| %>
+<%= form_for @inquiry, :url => inquiry_thanks_path do |f| %>
   <table class="table">
     <tr>
       <th>名前</th>
@@ -15,7 +15,7 @@
       <th>メールアドレス</th>
       <td>
         <%= f.hidden_field :email %>
-        <%= @inquiry.emial %>
+        <%= @inquiry.email %>
       </td>
     </tr>
     <tr>
@@ -26,5 +26,5 @@
       </td>
     </tr>
   </table>
-  <%= f.submit '送信', class: :btn btn-prymary %>
+  <%= f.submit '送信', :class => 'btn btn-primary' %>
 <% end %>
