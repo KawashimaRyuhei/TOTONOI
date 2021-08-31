@@ -1,4 +1,4 @@
-class InqueryController < ApplicationController
+class InquiryController < ApplicationController
   def index
     @inquiry = Inquiry.new
     render :index
@@ -6,7 +6,7 @@ class InqueryController < ApplicationController
 
   def confirm
     @inquiry = Inquiry.new(params[:inquiry].permit(:name, :email, :message))
-    if.inquiry.valid?
+    if @inquiry.valid?
       render :confirm
     else
       render :index

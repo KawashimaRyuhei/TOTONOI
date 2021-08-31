@@ -2,7 +2,6 @@
   <div class="page-header">
     <h1>お問い合わせ</h1>
   </div>
-
   <% if @inquiry.errors.any? %>
     <div class="alert alera-danger" role="alert">
       <strong>入力内容に間違いがあります</strong>
@@ -13,10 +12,9 @@
       </ul>
     </div>
   <% end %>
-
   <table class="table">
     <tr>
-      <th>名前<span class="text-denger">(必須)</th>
+      <th>名前<span class="text-danger">(必須)</span></th>
       <td><%= f.text_field :name %></td>
     </tr>
     <tr>
