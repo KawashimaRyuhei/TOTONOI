@@ -1,4 +1,23 @@
 
+<div class="top">
+  <div class="top_text">
+    今日行きたいサウナがきっと見つかる
+  </div>
+  <div class="top_text">
+    TOTONOIはあなたのサウナライフを豊かにします
+  </div>
+  <div class="top_search">
+    <div class="search">
+      <%= search_form_for @s, url: search_stores_path do |f|%>
+        <% f.label :name_or_address_cont %>
+        <%= f.search_field :name_or_address_cont, placeholder: '店舗名、住所で検索', class: 'search_field' %>
+        <%= button_tag type: 'submit', class: 'search__btn' do %>
+          <i class="fas fa-search"></i>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
 <main class="main">
   <div class="inner">
     <% if user_signed_in? %>
