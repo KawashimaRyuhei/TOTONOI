@@ -166,6 +166,16 @@ a {
   font-size: 20px;
   color: #f5f5f5;
 }
+
+.top_subtext {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 15px;
+  color: #f5f5f5;
+  margin-top: 10px;
+}
+
 .top_search {
   display: flex;
   justify-content: center;
@@ -368,11 +378,20 @@ th, td{
 .footer {
   background-color: #87CEFA;
   padding: 10px 0;
+  height: 50px;
+}
+.inquiry {
+  display: flex;
+  justify-content: end;
+  font-size: 12px;
 }
 .copyright {
   text-align: center;
   color: #fff;
   font-size: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
 /* タブレット対応 */
