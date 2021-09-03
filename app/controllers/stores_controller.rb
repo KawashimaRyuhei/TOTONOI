@@ -2,7 +2,7 @@ class StoresController < ApplicationController
   before_action :search_store
   
   def index 
-    @store = Store.includes(:user).order("RAND()").page(params[:page]).per(6)
+    @store = Store.includes(:user).page(params[:page]).per(6)
   end
 
   def new

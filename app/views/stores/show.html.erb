@@ -7,7 +7,7 @@
       <p class="store__headding">
         <%= @store.name %>
       </p>
-      <% if user_signed_in? && current_user.id == 1 %>  
+      <% if user_signed_in? && current_user.id == 5 %>  
         <div class="store__manage">
           <%= link_to "編集する", edit_store_path(@store), class: :store__btn %>
           <%= link_to "削除する", store_path(@store), method: :delete, class: :store__btn %>
@@ -30,7 +30,7 @@
         </thead>
         <tbody>
           <tr>
-            <td class>
+            <td>
               <%= "#{@store.temperature}℃" %>
             </td>
             <td class>
@@ -52,6 +52,7 @@
         <thead>
           <th class="detail__title">休憩場所</th>
           <th class="detail__title">外気浴</th>
+          <th class="detail__title">水質</th>
           <th class="detail__title">BGM</th>
           <th class="detail__title">テレビ設置</th>          
         </thead>
@@ -64,6 +65,9 @@
               <%= @store.air_bath %>
             </td>
             <td class>
+              <%= @store.water_quality %>
+            </td>            
+            <td class>
               <%= @store.bgm %>
             </td>
             <td class>
@@ -73,12 +77,16 @@
         </tbody>
       </table>
       <table class="table3">
-        <thead>  
+        <thead>
+          <th class="detail__title">公式HP</th>          
           <th class="detail__title">郵便番号</th>
           <th class="detail__title">住所</th>
           <th class="detail__title">電話番号</th>
         </thead>
         <tbody>
+          <td class>
+            <%= link_to @store.name, @store.towel_rental %>
+          </td>        
           <td class>
             <%= "〒#{@store.postal_code}" %>
           </td>
@@ -93,14 +101,16 @@
       <table class="table4">
         <thead>  
           <th class="detail__title">入浴料</th>
-          <th class="detail__title">公式HP</th>
+          <th class="detail__title">タオル貸出</th>
+
           <th class="detail__title">店休日</th>
           <th class="detail__title">営業時間</th>
         </thead>
         <tbody>                                   
           <td class>
             <%= "#{@store.fee.to_s(:delimited)}円" %> 
-          </td>          
+          </td>
+                    
           <td class>
             <%= link_to @store.name, @store.url %>
           </td>
@@ -109,6 +119,20 @@
           </td>
           <td class>
             <%= @store.business_hour %>
+          </td>
+        </tbody>
+      </table>
+      <table class="table5">
+        <thead>  
+          <th class="detail__title">駐車場</th>
+          <th class="detail__title">駐輪場</th>
+        </thead>
+        <tbody>                                   
+          <td class>
+            <%= @store.parking_car %> 
+          </td>          
+          <td class>
+            <%= @store.parking_bicycle %>
           </td>
         </tbody>
       </table>
