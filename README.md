@@ -110,11 +110,17 @@ VSCode
 | closing_day     | string     | null: false                    |
 | business_hour   | string     | null: false                    |
 | fee             | integer    | null: false                    |
+| parking_car     | string     | null: false                    |
+| parking_bicycle | string     | null: false                    |
+| towel_rental    | string     | null: false                    |
 | water           | integer    | null: false                    |
+| water_depth     | string     | null: false                    |
+| water_quality   | string     | null: false                    |
 | temperature     | integer    | null: false                    |
 | roryu_status    | string     | null: false                    |
 | roryu_time      | string     | null: false                    |
-| water_depth     | string     | null: false                    |
+| air_bath        | string     | null: false                    |
+| break_place     | string     | null: false                    |
 | television      | string     | null: false                    |
 | bgm             | string     | null: false                    |
 | user            | references | null: false,foreign_key: true  |

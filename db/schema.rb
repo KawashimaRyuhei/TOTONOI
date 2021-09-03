@@ -61,9 +61,13 @@ ActiveRecord::Schema.define(version: 2021_08_15_073315) do
     t.string "closing_day", null: false
     t.string "business_hour", null: false
     t.integer "fee", null: false
-    t.integer "water", null: false
-    t.integer "temperature", null: false
+    t.string "parking_car", null: false
+    t.string "parking_bicycle", null: false
+    t.string "towel_rental", null: false
+    t.string "water", null: false
     t.string "water_depth", null: false
+    t.string "water_quality", null: false
+    t.integer "temperature", null: false
     t.string "roryu_status", null: false
     t.string "roryu_time", null: false
     t.string "air_bath", null: false
