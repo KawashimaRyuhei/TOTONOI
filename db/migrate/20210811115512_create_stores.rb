@@ -8,7 +8,7 @@ class CreateStores < ActiveRecord::Migration[6.0]
       t.string :url, null: false
       t.string :closing_day, null: false
       t.string  :business_hour, null: false
-      t.integer  :fee, null: false
+      t.integer :fee, null: false
       t.string :parking_car, null: false
       t.string :parking_bicycle, null: false
       t.string :towel_rental, null: false
