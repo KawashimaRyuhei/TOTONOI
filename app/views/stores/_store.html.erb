@@ -22,6 +22,26 @@
         <td><%= "#{store.roryu_time}"%></td>
       </tr>
     </table>
+    <table class="table2">
+      <tr>
+        <th>入浴料</th>
+        <th>タオル貸出</th>
+      </tr>
+      <tr>
+        <td><%= "#{store.fee}円" %></td>
+        <td><%= "#{store.towel_rental}"%></td>
+      </tr>
+    </table>
+        <table class="table2">
+      <tr>
+        <th>店休日</th>
+        <th>営業時間</th>
+      </tr>
+      <tr>
+        <td><%= "#{store.closing_day}" %></td>
+        <td><%= "#{store.business_hour}"%></td>
+      </tr>
+    </table>
     <div id="goods_buttons_<%= store.id %>">
       <%= render partial: 'goods/good', locals: { store: store } %>
     </div>
