@@ -92,23 +92,23 @@
       </table>
       <table class="table4">
         <thead>  
+          <th class="detail__title">入浴料</th>
           <th class="detail__title">公式HP</th>
           <th class="detail__title">店休日</th>
           <th class="detail__title">営業時間</th>
-          <th class="detail__title">入浴料</th> 
         </thead>
         <tbody>                                   
           <td class>
-            <%= @store.url %>
+            <%= "#{@store.fee.to_s(:delimited)}円" %> 
+          </td>          
+          <td class>
+            <%= link_to @store.name, @store.url %>
           </td>
           <td class>
             <%= @store.closing_day %>
           </td>
           <td class>
             <%= @store.business_hour %>
-          </td>
-          <td class>
-            <%= "#{@store.fee.to_s(:delimited)}円" %> 
           </td>
         </tbody>
       </table>
