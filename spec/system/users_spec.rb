@@ -6,12 +6,12 @@ def basic_pass(path)
   visit "http://#{username}:#{password}@#{Capybara.current_session.server.host}:#{Capybara.current_session.server.port}#{path}"
 end
 
-RSpec.describe "Users", type: :system do
+RSpec.describe "ユーザーサインアップ", type: :system do
   before do
     @user = FactoryBot.build(:user)
   end
   
-  describe "GET #index" do
+  context 'ユーザーが新規登録できるとき' do
     it '正しい情報を入力すればユーザーの新規登録ができトップページに移動する' do
       # 登録されているBasic認証のIDとPWで通過できること
       basic_pass root_path
@@ -34,19 +34,70 @@ RSpec.describe "Users", type: :system do
       expect(page).to have_no_content('ログイン')
       expect(page).to have_no_content('新規登録')
     end
+  end
 
+  context 'ユーザーが新規登録できないとき' do
     it '入力情報に誤りがあるとユーザー登録はできず新規登録ページへ戻される' do
+      # 登録されているBasic認証のIDとPWで通過できること
       basic_pass root_path
+      # トップページにサインアップページへ遷移するボタンがあることを確認する
       expect(page).to have_content('新規登録')
+      # 新規登録ページへ遷移する
       visit new_user_registration_path
+      # ユーザー情報を入力する
       fill_in 'user[nickname]', with: ''
       fill_in 'user[email]', with: ''
       fill_in 'user[password]', with: '' 
       fill_in 'user[password_confirmation]', with: ''
+      # 新規登録ボタンを押してもユーザーモデルのカウントが上がらないことを確認する
       expect{
         find('input[name="commit"]').click
       }.to change {User.count}.by(0)
+      # 新規登録ページへ戻されることを確認する
       expect(current_path).to eq user_registration_path
+    end
+  end
+end
+
+RSpec.describe 'ログイン', type: :system do
+  before do
+    @user = FactoryBot.create(:user)
+  end
+  context 'ログインができるとき' do
+    it '保存されているユーザーの情報と合致すればログインができる' do
+      # 登録されているBasic認証のIDとPWで通過できること
+      basic_pass root_path
+      # トップページにログインページへ遷移するボタンがあることを確認する
+      expect(body).to have_content('新規登録')
+      # ログインページへ遷移する
+      visit new_user_session_path
+      # 正しいユーザー情報を入力する
+      fill_in 'user[email]', with: @user.email
+      fill_in 'user[password]', with: @user.password
+      # ログインボタンを押す
+      find('input[name="commit"]').click
+      # トップページへ遷移することを確認する
+      expect(current_path).to eq root_path
+      # サインアップページへ遷移するボタンやログインページへ遷移するボタンが表示されていないことを確認する
+      expect(page).to have_no_content('新規登録')
+      expect(page).to have_no_content('ログイン')
+    end
+  end
+  context 'ログインができないとき' do
+    it '保存されているユーザーの情報と合致しないとログインができない' do
+      # 登録されているBasic認証のIDとPWで通過できること
+      basic_pass root_path
+      # トップページにログインページへ遷移するボタンがあることを確認する
+      expect(body).to have_content('新規登録')
+      # ログインページへ遷移する
+      visit new_user_session_path
+      # 誤ったユーザー情報を入力する
+      fill_in 'user[email]', with: ''
+      fill_in 'user[password]', with: ''
+      # ログインボタンを押す
+      find('input[name="commit"]').click
+      # ログインページへ戻されることを確認する
+      expect(current_path).to eq new_user_session_path
     end
   end
 end
