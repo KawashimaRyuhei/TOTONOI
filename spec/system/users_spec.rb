@@ -34,5 +34,19 @@ RSpec.describe "Users", type: :system do
       expect(page).to have_no_content('ログイン')
       expect(page).to have_no_content('新規登録')
     end
+
+    it '入力情報に誤りがあるとユーザー登録はできず新規登録ページへ戻される' do
+      basic_pass root_path
+      expect(page).to have_content('新規登録')
+      visit new_user_registration_path
+      fill_in 'user[nickname]', with: ''
+      fill_in 'user[email]', with: ''
+      fill_in 'user[password]', with: '' 
+      fill_in 'user[password_confirmation]', with: ''
+      expect{
+        find('input[name="commit"]').click
+      }.to change {User.count}.by(0)
+      expect(current_path).to eq user_registration_path
+    end
   end
 end
