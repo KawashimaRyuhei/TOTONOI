@@ -59,6 +59,7 @@ RSpec.describe 'ログイン', type: :system do
   end
   context 'ログインができるとき' do
     it '保存されているユーザーの情報と合致すればログインができる' do
+      basic_pass root_path
       sign_in(@user)
       # サインアップページへ遷移するボタンやログインページへ遷移するボタンが表示されていないことを確認する
       expect(page).to have_no_content('新規登録')
