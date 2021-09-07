@@ -1,5 +1,8 @@
 class StoresController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show, :search]
+  before_action :move_to_index, except: [:index, :show, :search]
   before_action :search_store
+  before_action :find_params, only: [:show, :edit, :update, :destroy]
 
   def index
     @store = Store.includes(:user).page(params[:page]).per(6)
@@ -21,16 +24,13 @@ class StoresController < ApplicationController
 
   def show
     @comment = Comment.new
-    @store = Store.find(params[:id])
     @comments = @store.comments.includes(:user)
   end
 
   def edit
-    @store = Store.find(params[:id])
   end
 
   def update
-    @store = Store.find(params[:id])
     if @store.update(post_params)
       redirect_to store_path(@store)
     else
@@ -39,7 +39,6 @@ class StoresController < ApplicationController
   end
 
   def destroy
-    @store = Store.find(params[:id])
     @store.destroy
     redirect_to root_path
   end
@@ -49,6 +48,15 @@ class StoresController < ApplicationController
   end
 
   private
+  def move_to_index
+    unless current_user.id == 1
+      redirect_to root_path
+    end
+  end
+
+  def find_params
+    @store = Store.find(params[:id])
+  end
 
   def post_params
     params.require(:store).permit(:name, :address, :postal_code, :telephone, :url, :closing_day, :business_hour, :fee, :water, :temperature,
