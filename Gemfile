@@ -69,10 +69,10 @@ gem 'active_hash'
 
 gem 'ransack'
 
-
-
 gem 'kaminari'
 
 gem 'dotenv-rails'
 
 gem 'aws-sdk-s3', require: false
+
+gem 'rubocop', require: false
