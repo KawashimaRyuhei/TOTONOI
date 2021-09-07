@@ -7,15 +7,7 @@
       TOTONOIはあなたのサウナライフを豊かにします
     </div>
     <div class="top_search">
-      <div class="search">
-        <%= search_form_for @s, url: search_stores_path do |f|%>
-          <% f.label :name_or_address_cont %>
-          <%= f.search_field :name_or_address_cont, placeholder: '店舗名、エリア検索', class: 'search_field' %>
-          <%= button_tag type: 'submit', class: 'search__btn' do %>
-            <i class="fas fa-search"></i>
-          <% end %>
-        <% end %>
-      </div>
+      <%= render partial: "store_search" %>
     </div>
   </div>
 <% end %>
@@ -27,15 +19,7 @@
       <%= link_to "#{current_user.nickname}さん", "#", class: :greeting__link%>
     </div>
     <% end %>
-    <div class="search">
-      <%= search_form_for @s, url: search_stores_path do |f|%>
-        <% f.label :name_or_address_cont %>
-        <%= f.search_field :name_or_address_cont, placeholder: '店舗名、エリア検索', class: 'search_field' %>
-        <%= button_tag type: 'submit', class: 'search__btn' do %>
-          <i class="fas fa-search"></i>
-        <% end %>
-      <% end %>
-    </div>
+    <%= render partial: "store_search" %>
     <div class="card__wrapper">
       <%= render partial: "store", collection: @store %>
     </div>

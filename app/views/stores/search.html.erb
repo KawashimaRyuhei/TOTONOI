@@ -9,48 +9,10 @@
       <%= link_to "#{current_user.nickname}さん", "#", class: :greeting__link%>
     </div>
     <% end %>
-    <div class="search">
-      <%= search_form_for @s, url: search_stores_path do |f|%>
-        <% f.label :name_or_address_cont%>
-        <%= f.search_field :name_or_address_cont %>
-        <%= button_tag type: 'submit', class: 'search__btn' do %>
-          <i class="fas fa-search"></i>
-        <% end %>
-      <% end %>
-    </div>
+    <%= render partial: "store_search" %>
     <div class="card__wrapper">
-      <% @results.each do |result| %>
-        <div class="card">
-          <%= link_to image_tag( result.images[0], class: :card__img, size: '3830x383'), store_path(result) %>
-          <div class="card__body">
-            <%= link_to result.name, store_path(result), class: :card__title%>
-            <table class="table1">
-              <tr>
-                <th>水風呂</th>
-                <th>サウナ内温度</th>
-              </tr>
-              <tr>
-                <td><%= "#{result.water}℃" %></td>
-                <td><%= "#{result.temperature}℃" %></td>
-              </tr>
-            </table>
-            <table class="table2">
-              <tr>
-                <th>ロウリュ</th>
-                <th>ロウリュタイム</th>
-              </tr>
-              <tr>
-                <td><%= "#{result.roryu_status}" %></td>
-                <td><%= "#{result.roryu_time}"%></td>
-              </tr>
-            </table>
-            <div id="goods_buttons_<%= result.id %>">
-              <%= render partial: 'goods/good', locals: { store: result } %>
-            </div>
-          </div>
-        </div>
-      <% end %>
+      <%= render partial: "store", collection: @results %>
     </div>
-    <%= paginate @results %> 
+    <%= paginate @results %>
   </div>
-</main>
+</div>

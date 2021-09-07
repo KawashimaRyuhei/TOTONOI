@@ -30,21 +30,11 @@
         </thead>
         <tbody>
           <tr>
-            <td>
-              <%= "#{@store.temperature}℃" %>
-            </td>
-            <td class>
-              <%= "#{@store.water}℃ "%>
-            </td>
-            <td class>
-              <%= "#{@store.water_depth}cm" %>
-            </td>             
-            <td class>
-              <%= @store.roryu_status %>
-            </td>
-            <td class>
-              <%= @store.roryu_time %>
-            </td>
+            <td><%= "#{@store.temperature}℃" %></td>
+            <td><%= "#{@store.water}℃ "%></td>
+            <td><%= "#{@store.water_depth}cm" %></td>
+            <td><%= @store.roryu_status %></td>
+            <td><%= @store.roryu_time %></td>
           </tr>
         </tbody>
       </table>
@@ -58,21 +48,11 @@
         </thead>
         <tbody>
           <tr>
-            <td class>
-              <%= @store.break_place %>
-            </td>
-            <td class>
-              <%= @store.air_bath %>
-            </td>
-            <td class>
-              <%= @store.water_quality %>
-            </td>            
-            <td class>
-              <%= @store.bgm %>
-            </td>
-            <td class>
-              <%= @store.television %>
-            </td>
+            <td><%= @store.break_place %></td>
+            <td><%= @store.air_bath %></td>
+            <td><%= @store.water_quality %></td>            
+            <td><%= @store.bgm %></td>
+            <td><%= @store.television %></td>
           </tr>
         </tbody>
       </table>
@@ -84,42 +64,24 @@
           <th class="detail__title">電話番号</th>
         </thead>
         <tbody>
-          <td class>
-            <%= link_to @store.name, @store.towel_rental %>
-          </td>        
-          <td class>
-            <%= "〒#{@store.postal_code}" %>
-          </td>
-          <td class>
-            <%= @store.address %>
-          </td>
-          <td class>
-            <%= @store.telephone %>
-          </td>
+          <td><%= link_to @store.name, @store.towel_rental %></td>
+          <td><%= "〒#{@store.postal_code}" %></td>
+          <td><%= @store.address %></td>
+          <td><%= @store.telephone %></td>
         </tbody>
       </table>
       <table class="table4">
         <thead>  
           <th class="detail__title">入浴料</th>
           <th class="detail__title">タオル貸出</th>
-
           <th class="detail__title">店休日</th>
           <th class="detail__title">営業時間</th>
         </thead>
-        <tbody>                                   
-          <td class>
-            <%= "#{@store.fee.to_s(:delimited)}円" %> 
-          </td>
-                    
-          <td class>
-            <%= @store.towel_rental %>
-          </td>
-          <td class>
-            <%= @store.closing_day %>
-          </td>
-          <td class>
-            <%= @store.business_hour %>
-          </td>
+        <tbody>
+          <td><%= "#{@store.fee.to_s(:delimited)}円" %> </td>
+          <td><%= @store.towel_rental %></td>
+          <td><%= @store.closing_day %></td>
+          <td><%= @store.business_hour %></td>
         </tbody>
       </table>
       <table class="table5">
@@ -127,13 +89,9 @@
           <th class="detail__title">駐車場</th>
           <th class="detail__title">駐輪場</th>
         </thead>
-        <tbody>                                   
-          <td class>
-            <%= @store.parking_car %> 
-          </td>          
-          <td class>
-            <%= @store.parking_bicycle %>
-          </td>
+        <tbody>
+          <td><%= @store.parking_car %> </td>
+          <td><%= @store.parking_bicycle %></td>
         </tbody>
       </table>
       <div id='map' class="<%= @store.postal_code + @store.address%>"></div>
