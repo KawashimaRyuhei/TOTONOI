@@ -1,7 +1,7 @@
 class StoresController < ApplicationController
   before_action :search_store
-  
-  def index 
+
+  def index
     @store = Store.includes(:user).page(params[:page]).per(6)
   end
 
@@ -26,7 +26,7 @@ class StoresController < ApplicationController
   end
 
   def edit
-    @store = Store.find(params[:id]) 
+    @store = Store.find(params[:id])
   end
 
   def update
@@ -49,9 +49,9 @@ class StoresController < ApplicationController
   end
 
   private
-  def post_params
-    params.require(:store).permit(:name, :address, :postal_code, :telephone, :url, :closing_day, :business_hour, :fee, :water, :temperature, 
-                                  :roryu_status, :roryu_time, :air_bath, :break_place, :television, :bgm, :water_depth, images: [] ).merge(user_id: current_user.id)
-  end
 
+  def post_params
+    params.require(:store).permit(:name, :address, :postal_code, :telephone, :url, :closing_day, :business_hour, :fee, :water, :temperature,
+                                  :roryu_status, :roryu_time, :air_bath, :break_place, :television, :bgm, :water_depth, images: []).merge(user_id: current_user.id)
+  end
 end

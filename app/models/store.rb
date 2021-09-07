@@ -3,7 +3,7 @@ class Store < ApplicationRecord
   has_many :goods, dependent: :destroy
   belongs_to :user
   has_many_attached :images
-  
+
   with_options presence: true do
     validates :name, :address, :postal_code, :telephone, :url,
               :closing_day, :business_hour, :fee, :parking_car, :parking_bicycle, :towel_rental, :water, :water_depth, :water_quality,

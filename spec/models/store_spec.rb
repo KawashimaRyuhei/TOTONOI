@@ -2,10 +2,9 @@ require 'rails_helper'
 
 RSpec.describe Store, type: :model do
   describe '店舗情報の投稿' do
-    
-    let(:store) {FactoryBot.build(:store)}
-    let(:images) {fixture_file_upload("/サウナの梅湯.jpeg","/300x300.png")}
-    
+    let(:store) { FactoryBot.build(:store) }
+    let(:images) { fixture_file_upload('/サウナの梅湯.jpeg', '/300x300.png') }
+
     context '店舗情報が投稿できる' do
       it '必要な情報が全て入力されていれば投稿できる' do
         pending
@@ -127,9 +126,8 @@ RSpec.describe Store, type: :model do
       it 'user_idと紐づいていないと投稿できない' do
         store.user = nil
         store.valid?
-        expect(store.errors.full_messages).to include("User must exist")
+        expect(store.errors.full_messages).to include('User must exist')
       end
-
     end
   end
 end

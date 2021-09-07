@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Stores", type: :system do
+RSpec.describe 'Stores', type: :system do
   before do
     @store = FactoryBot.create(:store)
     @store.images = fixture_file_upload('/300x300.png')
@@ -24,7 +24,6 @@ RSpec.describe "Stores", type: :system do
       # トップページに遷移する
       # トップページには先ほど投稿した内容のツイートが存在することを確認する（画像）
       # トップページには先ほど投稿した内容のツイートが存在することを確認する（テキスト）
-  
     end
   end
 end

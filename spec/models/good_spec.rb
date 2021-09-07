@@ -16,15 +16,14 @@ RSpec.describe Good, type: :model do
       it 'user_idと紐づいていないと保存できない' do
         @good.user = nil
         @good.valid?
-        expect(@good.errors.full_messages).to include("User must exist")
+        expect(@good.errors.full_messages).to include('User must exist')
       end
-      
+
       it 'store_idと紐づいていないと保存できない' do
         @good.store = nil
         @good.valid?
-        expect(@good.errors.full_messages).to include("Store must exist")
+        expect(@good.errors.full_messages).to include('Store must exist')
       end
-    end    
+    end
   end
 end
-

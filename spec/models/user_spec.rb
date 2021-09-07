@@ -5,7 +5,7 @@ RSpec.describe User, type: :model do
     before do
       @user = FactoryBot.build(:user)
     end
-  
+
     context '新規登録できる' do
       it '必要な情報が正しく入力されていれば登録できる' do
         expect(@user).to be_valid
@@ -28,12 +28,12 @@ RSpec.describe User, type: :model do
         another_user = FactoryBot.build(:user)
         another_user.email = @user.email
         another_user.valid?
-        expect(another_user.errors.full_messages).to include("Email has already been taken")
+        expect(another_user.errors.full_messages).to include('Email has already been taken')
       end
       it 'emailに@がないと登録できない' do
         @user.email = 'aaaaaa'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Email is invalid")
+        expect(@user.errors.full_messages).to include('Email is invalid')
       end
       it 'passwordが空だと登録できない' do
         @user.password = ''
@@ -43,17 +43,17 @@ RSpec.describe User, type: :model do
       it 'passwordが5文字以下だと登録できない' do
         @user.password = 'aaaaa'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password is too short (minimum is 6 characters)")
+        expect(@user.errors.full_messages).to include('Password is too short (minimum is 6 characters)')
       end
       it 'passwordが英語のみだと登録できない' do
         @user.password = 'aaaaaaaa'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password Please include both letters and numbers in your settings")
+        expect(@user.errors.full_messages).to include('Password Please include both letters and numbers in your settings')
       end
       it 'passwordが数字のみだと登録できない' do
         @user.password = '111111'
         @user.valid?
-        expect(@user.errors.full_messages).to include("Password Please include both letters and numbers in your settings")
+        expect(@user.errors.full_messages).to include('Password Please include both letters and numbers in your settings')
       end
       it 'passwordとpassword_confirmationが一致しないと登録できない' do
         @user.password = 'aaaaa1'

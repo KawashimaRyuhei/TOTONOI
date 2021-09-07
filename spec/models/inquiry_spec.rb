@@ -16,37 +16,37 @@ RSpec.describe Inquiry, type: :model do
       it 'nameが空だと送信できない' do
         @inquiry.name = ''
         @inquiry.valid?
-        expect(@inquiry.errors.full_messages).to include("Name 名前を入力してください") 
+        expect(@inquiry.errors.full_messages).to include('Name 名前を入力してください')
       end
-      
+
       it 'emailが空だと送信できない' do
         @inquiry.email = ''
         @inquiry.valid?
-        expect(@inquiry.errors.full_messages).to include("Email メールアドレスを入力してください")
+        expect(@inquiry.errors.full_messages).to include('Email メールアドレスを入力してください')
       end
 
       it 'emailに@がないと送信できない' do
-        @inquiry.email ='aaa'
+        @inquiry.email = 'aaa'
         @inquiry.valid?
-        expect(@inquiry.errors.full_messages).to include("Email メールアドレスを入力してください")
+        expect(@inquiry.errors.full_messages).to include('Email メールアドレスを入力してください')
       end
 
       it 'emailが全角だと送信できない' do
-        @inquiry.email ='ＡＡＡ'
+        @inquiry.email = 'ＡＡＡ'
         @inquiry.valid?
-        expect(@inquiry.errors.full_messages).to include("Email メールアドレスを入力してください")
+        expect(@inquiry.errors.full_messages).to include('Email メールアドレスを入力してください')
       end
 
       it 'emailが英数字以外だと送信できない' do
-        @inquiry.email ='あ亜ｱ'
+        @inquiry.email = 'あ亜ｱ'
         @inquiry.valid?
-        expect(@inquiry.errors.full_messages).to include("Email メールアドレスを入力してください")
+        expect(@inquiry.errors.full_messages).to include('Email メールアドレスを入力してください')
       end
 
       it 'messageが空だと送信できない' do
         @inquiry.message = ''
         @inquiry.valid?
-        expect(@inquiry.errors.full_messages).to include("Message メッセージを入力してください") 
+        expect(@inquiry.errors.full_messages).to include('Message メッセージを入力してください')
       end
     end
   end

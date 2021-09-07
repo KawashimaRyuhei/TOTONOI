@@ -6,19 +6,18 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
-      
+
     with_options length: { minimum: 6 },
-      format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/,
-               message: 'Please include both letters and numbers in your settings' } do
+                 format: { with: /(?=.*[a-zA-Z])(?=.*\d)[a-zA-Z\d]{6,}/,
+                           message: 'Please include both letters and numbers in your settings' } do
       validates :encrypted_password
       validates :password
       validates :password_confirmation
     end
-  end  
-  
+  end
+
   has_many :stores, dependent: :destroy
   has_many :comments, dependent: :destroy
   has_many :goods, dependent: :destroy
   has_many :good_stores, through: :goods, source: :store
-  
 end

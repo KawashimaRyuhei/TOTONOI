@@ -5,7 +5,7 @@ RSpec.describe Comment, type: :model do
     before do
       @content = FactoryBot.build(:comment)
     end
-  
+
     context 'コメントが投稿できる' do
       it 'contentが入力されていればコメント投稿できる' do
         expect(@content).to be_valid
@@ -22,13 +22,13 @@ RSpec.describe Comment, type: :model do
       it 'userが紐づいていないと投稿できない' do
         @content.user = nil
         @content.valid?
-        expect(@content.errors.full_messages).to include("User must exist")
+        expect(@content.errors.full_messages).to include('User must exist')
       end
 
       it 'storeが紐づいていないと投稿できない' do
         @content.store = nil
         @content.valid?
-        expect(@content.errors.full_messages).to include("Store must exist")
+        expect(@content.errors.full_messages).to include('Store must exist')
       end
     end
   end
