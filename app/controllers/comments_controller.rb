@@ -1,4 +1,7 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
+
+  
   def create
     @store = Store.find(params[:store_id])
     @comment = Comment.new(comment_params)
