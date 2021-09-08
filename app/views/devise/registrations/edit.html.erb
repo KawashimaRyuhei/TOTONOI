@@ -1,5 +1,5 @@
 <div class="main">
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>ユーザー情報編集・削除</h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= render "devise/shared/error_messages", resource: resource %>
@@ -42,9 +42,7 @@
   </div>
 <% end %>
 
-<h3>アカウントの削除</h3>
-
 <p><%= button_to "アカウントの削除", registration_path(resource_name), data: { confirm: "本当に削除しますか?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+<%= link_to "戻る", :back %>
 </div>
