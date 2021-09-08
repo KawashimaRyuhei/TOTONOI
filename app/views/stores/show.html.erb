@@ -7,7 +7,7 @@
       <p class="store__headding">
         <%= @store.name %>
       </p>
-      <% if user_signed_in? && current_user.id == 5 %>  
+      <% if user_signed_in? && current_user.id == 5 || current_user.id == 35 %>  
         <div class="store__manage">
           <%= link_to "編集する", edit_store_path(@store), class: :store__btn %>
           <%= link_to "削除する", store_path(@store), method: :delete, class: :store__btn %>

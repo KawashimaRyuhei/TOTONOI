@@ -17,7 +17,6 @@
     <div class="greeting">
       こんにちは、
       <%= link_to "#{current_user.nickname}さん", "#", class: :greeting__link%>
-      <%= current_user.id %>
     </div>
     <% end %>
     <%= render partial: "store_search" %>
