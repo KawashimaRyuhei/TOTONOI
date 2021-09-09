@@ -2,16 +2,16 @@ require 'rails_helper'
 
 RSpec.describe 'Stores', type: :system do
   before do
-    @store = FactoryBot.create(:store)
-    @store.images = fixture_file_upload('/300x300.png')
-    @user = @store.user
+    @user = FactoryBot.create(:user)
+    # @store = FactoryBot.create(:store)
+    # @store.images = fixture_file_upload('/300x300.png')
+    # @user = @store.user
   end
 
   context '店舗登録ができるとき' do
     it '' do
       # 登録されているBasic認証のIDとPWで通過する
       basic_pass root_path
-      binding.pry
       # ログインする
       sign_in(@user)
       # 新規投稿ページへのボタンがあることを確認する

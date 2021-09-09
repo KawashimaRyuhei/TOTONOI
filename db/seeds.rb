@@ -23,6 +23,6 @@ CSV.foreach('db/csv/store_data.csv',headers: true) do |row|
     break_place: row['break_place'],
     television: row['television'],
     bgm: row['bgm'],
-    user_id: row['user_id']
+    user: User.find(row['user_id'])
   )
 end

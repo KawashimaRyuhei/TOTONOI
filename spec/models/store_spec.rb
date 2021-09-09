@@ -3,11 +3,12 @@ require 'rails_helper'
 RSpec.describe Store, type: :model do
   describe '店舗情報の投稿' do
     let(:store) { FactoryBot.build(:store) }
-    let(:images) { fixture_file_upload('/サウナの梅湯.jpeg', '/300x300.png') }
+    # let(:images) { fixture_file_upload('/サウナの梅湯.jpeg', '/300x300.png') }
 
     context '店舗情報が投稿できる' do
       it '必要な情報が全て入力されていれば投稿できる' do
-        pending
+        store.images = [ fixture_file_upload('サウナの梅湯.jpeg', 'image/jpg'),  fixture_file_upload('300x300.png', 'image/png') ]
+        # store.images = [ fixture_file_upload('300x300.png', 'image/png') ]
         expect(store).to be_valid
       end
     end
