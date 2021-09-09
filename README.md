@@ -77,11 +77,13 @@ Ruby, Ruby on Rails
 HTML5, CSS, JavaScript, JQuery
 
 ### インフラ
-AWS(S3), GoogleMapsPlatform
+AWS(EC2, S3), GoogleMapsPlatform
 
 ### Webサーバ（本番環境）
+unicorn
 
 ### アプリケーションサーバ(本番環境)
+nginx
 
 ### ソース管理
 GitHub, GitHubDesktop
