@@ -80,10 +80,10 @@ HTML5, CSS, JavaScript, JQuery
 AWS(EC2, S3), GoogleMapsPlatform
 
 ### Webサーバ（本番環境）
-unicorn
+nginx
 
 ### アプリケーションサーバ(本番環境)
-nginx
+unicorn
 
 ### ソース管理
 GitHub, GitHubDesktop
