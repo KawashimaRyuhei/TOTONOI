@@ -9,9 +9,10 @@
 
 ## 本番環境
 https://totonoi-88.herokuapp.com/
+http://54.178.61.235/
 
 テストログイン用アカウント  
-・Eメール:test.user@gmail.com  
+・Eメール:test.user@gmail.com
 ・パスワード:testuser11
 
 ## 制作背景

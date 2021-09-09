@@ -3,12 +3,7 @@
     <div class="top_page">
       <%= link_to "ホーム", root_path, class: :nav__top %>
     </div>
-    <% if user_signed_in? %>
-    <div class="greeting">
-      こんにちは、
-      <%= link_to "#{current_user.nickname}さん", "#", class: :greeting__link%>
-    </div>
-    <% end %>
+    <%= render partial: "hello_user" %>
     <%= render partial: "store_search" %>
     <div class="card__wrapper">
       <%= render partial: "store", collection: @results %>

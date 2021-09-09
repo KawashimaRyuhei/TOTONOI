@@ -13,12 +13,8 @@
 <% end %>
 <main class="main">
   <div class="inner">
-    <% if user_signed_in? %>
-    <div class="greeting">
-      こんにちは、
-      <%= link_to "#{current_user.nickname}さん", "#", class: :greeting__link%>
-    </div>
-    <% end %>
+    <%= render partial: "hello_user" %>
+    <%= current_user.id %>
     <%= render partial: "store_search" %>
     <div class="card__wrapper">
       <%= render partial: "store", collection: @store %>

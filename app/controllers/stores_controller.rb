@@ -49,7 +49,7 @@ class StoresController < ApplicationController
 
   private
   def move_to_index
-    unless current_user.id == 5 || current_user.id == 35
+    unless current_user.id == 1 || current_user.id == 2
       redirect_to root_path
     end
   end
