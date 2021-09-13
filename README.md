@@ -11,7 +11,7 @@
 http://54.178.61.235/
 
 テストログイン用アカウント  
-・Eメール:test.user@gmail.com
+・Eメール:testuser@gmail.com
 ・パスワード:testuser11
 
 ## 制作背景
