@@ -5,7 +5,7 @@ FactoryBot.define do
     postal_code { Faker::Address.street_address }
     telephone { Faker::PhoneNumber.cell_phone }
     url { Faker::Internet.url }
-    closing_day { Faker::Lorem.sentence(word_count: 3) }
+    closing_day { Faker::Lorem.words }
     business_hour { Faker::Number.within(range: 1..24) }
     fee { Faker::Number.within(range: 1..10_000) }
     parking_car { Faker::Lorem.words }
