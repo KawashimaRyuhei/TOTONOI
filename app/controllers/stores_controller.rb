@@ -59,7 +59,7 @@ class StoresController < ApplicationController
   end
 
   def post_params
-    params.require(:store).permit(:name, :address, :postal_code, :telephone, :url, :closing_day, :business_hour, :fee, :water, :temperature,
+    params.require(:store).permit(:name, :address, :postal_code, :telephone, :url, :closing_day, :business_hour, :fee, :parking_car, :parking_bicycle, :towel_rental, :water_quality, :water, :temperature,
                                   :roryu_status, :roryu_time, :air_bath, :break_place, :television, :bgm, :water_depth, images: []).merge(user_id: current_user.id)
   end
 end

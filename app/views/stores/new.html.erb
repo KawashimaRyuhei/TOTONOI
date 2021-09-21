@@ -2,6 +2,13 @@
   <div class="inner">
     <div class="form__wrapper">
       <h2 class="page-heading">新規店舗登録</h2>
+        <% if @store.errors.any? %>
+          <ul>
+            <% @store.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        <% end %>
         <%= render partial: "form", locals: { store: @store } %>
     </div>
   </div>
