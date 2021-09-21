@@ -4,8 +4,6 @@ RSpec.describe 'Stores', type: :system do
   before do
     @user = FactoryBot.create(:user)
     @store = FactoryBot.build(:store)
-    # @store.images = fixture_file_upload('/300x300.png')
-    # @user = @store.user
   end
 
   context '店舗登録ができるとき' do
@@ -52,6 +50,10 @@ RSpec.describe 'Stores', type: :system do
       expect(page).to have_selector('img')
       # トップページには先ほど投稿した内容が存在することを確認する（テキスト）
       expect(page).to have_content(@store.name)
+    end
+  context '店舗登録ができないとき' do
+    it '情報に不備があると店舗登録できない' do
+      
     end
   end
 end
