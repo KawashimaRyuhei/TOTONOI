@@ -34,6 +34,16 @@
     <%= f.text_field :business_hour, class: :form__text, id:"store_concept" %>
   </div>
   
+    <div class="field">
+    <%= f.label :parking_car, "駐車場" %><br />
+    <%= f.text_field :parking_car, class: :form__text, id:"store_concept" %>
+  </div>
+
+    <div class="field">
+    <%= f.label :parking_bicycle, "駐輪場" %><br />
+    <%= f.text_field :parking_bicycle, class: :form__text, id:"store_concept" %>
+  </div>
+
   <div class="field">
     <%= f.label :fee, "入浴料" %><br />
     <%= f.text_field :fee, class: :form__text, id:"store_concept" %>
@@ -73,7 +83,11 @@
     <%= f.label :water_depth, "水深" %><br />
     <%= f.text_field :water_depth, class: :form__text, id:"store_concept" %>
   </div>
-
+  
+  <div class="field">
+    <%= f.label :water_quality, "水質" %><br />
+    <%= f.text_field :water_quality, class: :form__text, id:"store_concept" %>
+  </div>
 
   <div class="field">
     <%= f.label :air_bath, "外気浴" %><br />

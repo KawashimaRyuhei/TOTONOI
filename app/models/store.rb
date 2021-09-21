@@ -7,7 +7,7 @@ class Store < ApplicationRecord
   with_options presence: true do
     validates :name, :address, :postal_code, :telephone, :url,
               :closing_day, :business_hour, :fee, :parking_car, :parking_bicycle, :towel_rental, :water, :water_depth, :water_quality,
-              :temperature, :roryu_status, :roryu_time, :air_bath, :break_place, :television, :bgm, :water_depth, :images
+              :temperature, :roryu_status, :roryu_time, :air_bath, :break_place, :television, :bgm, :images
   end
 
   def favorited_by?(user)
