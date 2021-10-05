@@ -1,0 +1,34 @@
+version: '3'
+services:
+  # database.yml の host で指定した名前と一致させること
+  db:
+    platform: linux/x86_64
+    image: mysql:5.6.51
+    volumes:
+      # dbコンテナが停止しても、データを保持するようにする
+      - ./tmp/volumes/db:/var/lib/mysql
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+
+  # Dockerfile で構築するイメージを web という名前で扱う
+  web:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    # 一度サーバーが起動すると起動し続けるので、rm -f /app/tmp/pids/server.pidで、dockerが起動する度に一旦停止させる
+    command: /bin/sh -c "rm -f /app/tmp/pids/server.pid && bundle exec rails s -p 3000 -b '0.0.0.0'"
+    tty: true
+    stdin_open: true
+    depends_on:
+      # 依存関係 - dbコンテナ作成後、web実行
+      - db
+    ports:
+      - "3000:3000"
+    environment:
+      BASIC_AUTH_USER: hyper
+      BASIC_AUTH_PASSWORD: 0000
+    volumes:
+      # ソースコード変更したらDocker側も即反映されるように
+      - .:/app 
