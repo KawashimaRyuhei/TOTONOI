@@ -26,9 +26,6 @@ services:
       - db
     ports:
       - "3000:3000"
-    environment:
-      BASIC_AUTH_USER: hyper
-      BASIC_AUTH_PASSWORD: 0000
     volumes:
       # ソースコード変更したらDocker側も即反映されるように
       - .:/app 

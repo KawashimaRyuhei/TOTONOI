@@ -77,7 +77,7 @@ Ruby, Ruby on Rails
 HTML5, CSS, JavaScript, JQuery
 
 ### インフラ
-AWS(EC2, S3), GoogleMapsPlatform
+Docker, AWS(EC2, S3), GoogleMapsPlatform
 
 ### Webサーバ（本番環境）
 nginx
