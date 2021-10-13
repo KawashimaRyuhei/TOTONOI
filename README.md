@@ -23,16 +23,16 @@ http://54.178.61.235/
 
 
 ## 機能一覧
-  ・ユーザー登録、ログイン機能(devise)
-  ・投稿機能
-      ・画像投稿(Active Strage)
-      ・プレビュー機能(JavaScript)
-      ・位置情報表示機能(GoogleMapsAPI)
-  ・いいね機能（jQuery）
-  ・コメント機能
-  ・ページネーション機能(kaminari)
-  ・検索機能(ransack)
-  ・問い合わせ機能
+・ユーザー登録、ログイン機能(devise)  
+・投稿機能  
+  ・画像投稿(Active Strage)  
+  ・プレビュー機能(JavaScript)  
+  ・位置情報表示機能(GoogleMapsAPI)  
+・いいね機能（jQuery）  
+・コメント機能  
+・ページネーション機能(kaminari)  
+・検索機能(ransack)  
+・問い合わせ機能  
 
 
 ## DEMO
