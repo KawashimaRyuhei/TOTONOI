@@ -190,7 +190,34 @@ a {
 }
 
 .ul {
+  white-space: nowrap;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
 
+.li {
+  display: inline-block;
+  width: 400px;
+  height: 200px;
+  margin: 0;
+  padding: 0;
+}
+
+.li:first-of-type {
+  animation-name: expansion;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-delay: 2s;
+  animation-iteration-count: 1;
+  animation-direction: normal;
+  animation-fill-mode: backwards;
+  animation-play-state: running;
+}
+
+@keyframes expansion{
+  0% { margin-left: -200px; }
+  100% { margin-left: -600px; }
 }
 
 .main{
