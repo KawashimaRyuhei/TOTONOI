@@ -9,20 +9,20 @@
     <div class="top_search">
       <%= render partial: "store_search" %>
     </div>
+    <div class="image_slider">
+      <ul>
+        <li><img src="https://placehold.jp/400x200.png" alt="">
+        <li><img src="https://placehold.jp/400x150.png" alt="">
+        <li><img src="https://placehold.jp/400x100.png" alt="">
+        <li><img src="https://placehold.jp/400x50.png" alt="">
+      </ul>
+    </div>
+    <script>
+      document.querySelector('ul')
+        .addEventListener('animationend',
+          ({target: e})=> e.parentNode.appendChild (e), false);
+    </script>
   </div>
-  <div class="image_slider">
-    <ul>
-      <li><img src="" alt="">
-      <li><img src="" alt="">
-      <li><img src="" alt="">
-      <li><img src="" alt="">
-    </ul>
-  </div>
-  <script>
-  document.querySelector('')
-    .addEventListener('animationed',
-    ({target: e})=> e.parentNode.appendChild(e),false);
-  </script>
 <% end %>
 <main class="main">
   <div class="inner">

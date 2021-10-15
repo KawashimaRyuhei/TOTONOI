@@ -189,14 +189,14 @@ a {
   margin: 0 auto;
 }
 
-.ul {
+ul {
   white-space: nowrap;
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-.li {
+ul li {
   display: inline-block;
   width: 400px;
   height: 200px;
@@ -204,7 +204,7 @@ a {
   padding: 0;
 }
 
-.li:first-of-type {
+li:first-of-type {
   animation-name: expansion;
   animation-duration: 2s;
   animation-timing-function: ease;
