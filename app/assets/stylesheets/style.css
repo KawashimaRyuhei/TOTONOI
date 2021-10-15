@@ -184,9 +184,9 @@ a {
 
 .image_slider {
   width: 800px;
-  height: 200px;
+  height: 600px;
   overflow: hidden;
-  margin: 0 auto;
+  margin: 10px auto;
 }
 
 ul {
@@ -199,7 +199,7 @@ ul {
 ul li {
   display: inline-block;
   width: 400px;
-  height: 200px;
+  height: 400px;
   margin: 0;
   padding: 0;
 }
