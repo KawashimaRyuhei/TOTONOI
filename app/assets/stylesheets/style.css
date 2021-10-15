@@ -196,7 +196,7 @@ ul {
   margin: 0;
 }
 
-ul li {
+.slider {
   display: inline-block;
   width: 400px;
   height: 400px;
@@ -204,7 +204,7 @@ ul li {
   padding: 0;
 }
 
-li:first-of-type {
+.slider:first-of-type {
   animation-name: expansion;
   animation-duration: 2s;
   animation-timing-function: ease;
