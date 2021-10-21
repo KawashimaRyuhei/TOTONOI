@@ -11,10 +11,14 @@
     </div>
     <div class="image_slider">
       <ul>
+        <% @store.images[0].each do |image| %>
+          <li class="slider"><%= image_tag image, size: '500x500', alt: '店舗画像' %>      
+        <% end %>
+        <%# <%= link_to image_tag( @stores.images[0], class: :card__img, size: '383x383'), store_path(@stores) %> %>
+        <%# <li class="slider"><img src="https://placehold.jp/500x500.png" alt="">
         <li class="slider"><img src="https://placehold.jp/500x500.png" alt="">
         <li class="slider"><img src="https://placehold.jp/500x500.png" alt="">
-        <li class="slider"><img src="https://placehold.jp/500x500.png" alt="">
-        <li class="slider"><img src="https://placehold.jp/500x500.png" alt="">
+        <li class="slider"><img src="https://placehold.jp/500x500.png" alt=""> %>
       </ul>
     </div>
     <script>

@@ -38,7 +38,7 @@ http://54.178.61.235/
 
 ## DEMO
 ### トップページ
-![トップページ](https://user-images.githubusercontent.com/58518385/132451301-c3d8dba1-c503-4c9e-bbe2-bcfab1b17ea5.gif) 
+![トップページ](https://i.gyazo.com/fb135b7e7c7346fa0ae0858542ced116.gif) 
   
 トップページ兼一覧ページです。このページから店舗検索や店舗詳細ページに遷移することができます。
 
